@@ -1,7 +1,7 @@
 # erad
 Graph based python tool for computing equitable resilience 
 
-[Visit full documentation here](https://github.nrel.gov/pages/ERAD/erad/)
+[Visit full documentation here](https://nrel.github.io/erad/)
 
 ```
 ### :point_right: Generating CSV data set to load to Graph database

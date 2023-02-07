@@ -27,7 +27,7 @@ plugins:
   - mkdocstrings
   - search
 
-repo_url: https://github.nrel.gov/ERAD/erad
+repo_url: https://github.com/NREL/erad.git
 repo_name: nrel/erad
 
 
