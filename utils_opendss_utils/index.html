@@ -1,0 +1,2006 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>utils.opendss_utils - ERAD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#erad.utils.opendss_utils" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ERAD" class="md-header__button md-logo" aria-label="ERAD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ERAD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              utils.opendss_utils
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.nrel.gov/ERAD/erad" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nrel/erad
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ERAD" class="md-nav__button md-logo" aria-label="ERAD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ERAD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.nrel.gov/ERAD/erad" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nrel/erad
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_resilience_metrics/" class="md-nav__link">
+        Compute resilience metrics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-guides/" class="md-nav__link">
+        How to Guides
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils_ditto_utils/" class="md-nav__link">
+        utils.ditto_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils_hifld_utils/" class="md-nav__link">
+        utils.hifld_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          utils.opendss_utils
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        utils.opendss_utils
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils" class="md-nav__link">
+    erad.utils.opendss_utils
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.execute_dss_command" class="md-nav__link">
+    execute_dss_command()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.extract_export_opendss_model" class="md-nav__link">
+    extract_export_opendss_model()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_bounding_box" class="md-nav__link">
+    get_bounding_box()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_buses" class="md-nav__link">
+    get_buses()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_capacitors" class="md-nav__link">
+    get_capacitors()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_line_sections" class="md-nav__link">
+    get_line_sections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_loads" class="md-nav__link">
+    get_loads()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_pvsystems" class="md-nav__link">
+    get_pvsystems()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_transformers" class="md-nav__link">
+    get_transformers()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils_util/" class="md-nav__link">
+        utils.util
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization_plot_graph/" class="md-nav__link">
+        visualization.plot_graph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db_neo4j/" class="md-nav__link">
+        db.neo4j
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exceptions/" class="md-nav__link">
+        exceptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers-guide/" class="md-nav__link">
+        Guide to Developers
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils" class="md-nav__link">
+    erad.utils.opendss_utils
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.execute_dss_command" class="md-nav__link">
+    execute_dss_command()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.extract_export_opendss_model" class="md-nav__link">
+    extract_export_opendss_model()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_bounding_box" class="md-nav__link">
+    get_bounding_box()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_buses" class="md-nav__link">
+    get_buses()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_capacitors" class="md-nav__link">
+    get_capacitors()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_line_sections" class="md-nav__link">
+    get_line_sections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_loads" class="md-nav__link">
+    get_loads()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_pvsystems" class="md-nav__link">
+    get_pvsystems()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erad.utils.opendss_utils.get_transformers" class="md-nav__link">
+    get_transformers()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>utils.opendss_utils</h1>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="erad.utils.opendss_utils"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Module for extracting assets from OpenDSS model.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">erad</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extract_opendss_model</span><span class="p">(</span>
+<span class="go">        &lt;path_to_opendss_master_file&gt;,</span>
+<span class="go">        &lt;output_folder&gt;</span>
+<span class="go">    )</span>
+</code></pre></div>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.execute_dss_command" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">execute_dss_command</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">,</span> <span class="n">dss_command</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pass the valid dss command to be executed.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dss_command</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>DSS command sring to be executed</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="erad.exceptions.OpenDSSCommandError" href="../exceptions/#erad.exceptions.OpenDSSCommandError">OpenDSSCommandError</a></code>
+          </td>
+          <td><p>Raises this because opendss command execution
+ran into error</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">execute_dss_command</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">:</span> <span class="n">dss</span><span class="p">,</span> <span class="n">dss_command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Pass the valid dss command to be executed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+<span class="sd">        dss_command (str): DSS command sring to be executed</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        OpenDSSCommandError: Raises this because opendss command execution</span>
+<span class="sd">            ran into error</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="n">dss_command</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error executing command </span><span class="si">{</span><span class="n">dss_command</span><span class="si">}</span><span class="s2"> &gt;&gt; </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">OpenDSSCommandError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Error executing command </span><span class="si">{</span><span class="n">dss_command</span><span class="si">}</span><span class="s2"> &gt;&gt; </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sucessfully executed the command, </span><span class="si">{</span><span class="n">dss_command</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.extract_export_opendss_model" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_export_opendss_model</span><span class="p">(</span><span class="n">master_file</span><span class="p">,</span> <span class="n">output_folder_path</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extract the opendss models and exports into csv file format.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>master_file</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Path to opendss master file</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>output_folder_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Folder path for exporting the models to.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_export_opendss_model</span><span class="p">(</span>
+    <span class="n">master_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">output_folder_path</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Extract the opendss models and exports into csv file format.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        master_file (str): Path to opendss master file</span>
+<span class="sd">        output_folder_path (str): Folder path for exporting the models to.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Do a basic check on the path</span>
+    <span class="n">master_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">master_file</span><span class="p">)</span>
+    <span class="n">path_validation</span><span class="p">(</span><span class="n">master_file</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attempting to read case file &gt;&gt; </span><span class="si">{</span><span class="n">master_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Clear memory and compile dss file</span>
+    <span class="n">dss</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="s2">&quot;Clear&quot;</span><span class="p">)</span>
+    <span class="n">dss</span><span class="o">.</span><span class="n">Basic</span><span class="o">.</span><span class="n">ClearAll</span><span class="p">()</span>
+    <span class="n">execute_dss_command</span><span class="p">(</span><span class="n">dss</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Redirect </span><span class="si">{</span><span class="n">master_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Initial container</span>
+    <span class="n">transformers</span> <span class="o">=</span> <span class="n">get_transformers</span><span class="p">(</span><span class="n">dss</span><span class="p">)</span>
+    <span class="n">line_sections</span> <span class="o">=</span> <span class="n">get_line_sections</span><span class="p">(</span><span class="n">dss</span><span class="p">)</span>
+    <span class="n">buses</span> <span class="o">=</span> <span class="n">get_buses</span><span class="p">(</span><span class="n">dss</span><span class="p">)</span>
+    <span class="n">capacitors</span> <span class="o">=</span> <span class="n">get_capacitors</span><span class="p">(</span><span class="n">dss</span><span class="p">)</span>
+    <span class="n">pv_systems</span> <span class="o">=</span> <span class="n">get_pvsystems</span><span class="p">(</span><span class="n">dss</span><span class="p">)</span>
+    <span class="n">loads</span> <span class="o">=</span> <span class="n">get_loads</span><span class="p">(</span><span class="n">dss</span><span class="p">)</span>
+
+    <span class="n">output_folder_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">)</span>
+    <span class="n">output_folder_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">transformers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">transformers</span><span class="p">)</span>
+    <span class="n">transformers_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_folder_path</span> <span class="o">/</span> <span class="s2">&quot;transformers.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">line_sections_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">line_sections</span><span class="p">)</span>
+    <span class="n">line_sections_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_folder_path</span> <span class="o">/</span> <span class="s2">&quot;line_sections.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">buses_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">buses</span><span class="p">)</span>
+    <span class="n">buses_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_folder_path</span> <span class="o">/</span> <span class="s2">&quot;buses.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">capacitors_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">capacitors</span><span class="p">)</span>
+    <span class="n">capacitors_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_folder_path</span> <span class="o">/</span> <span class="s2">&quot;capacitors.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">pv_systems_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pv_systems</span><span class="p">)</span>
+    <span class="n">pv_systems_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_folder_path</span> <span class="o">/</span> <span class="s2">&quot;pv_systems.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">loads_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">loads</span><span class="p">)</span>
+    <span class="n">loads_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_folder_path</span> <span class="o">/</span> <span class="s2">&quot;loads.csv&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_bounding_box" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_bounding_box</span><span class="p">(</span><span class="n">master_file</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates a bounding box coordinate for covering region of opendss model.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>master_file</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Path to master dss file</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>buffer</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>Buffer distance around distribution model in meter</p></td>
+          <td>
+                <code>1000</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="erad.exceptions.MultiStatePlaneError" href="../exceptions/#erad.exceptions.MultiStatePlaneError">MultiStatePlaneError</a></code>
+          </td>
+          <td><p>Raises this if opendss models lies in multiple
+state plane coordinates</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+                <code><span title="typing.List">List</span></code>
+          </td>
+          <td><p>List of bounding box coordinates (lower_left, upper_right)</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_bounding_box</span><span class="p">(</span><span class="n">master_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">buffer</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Creates a bounding box coordinate for covering region of opendss model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        master_file (str): Path to master dss file</span>
+<span class="sd">        buffer (float): Buffer distance around distribution model in meter</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        MultiStatePlaneError: Raises this if opendss models lies in multiple</span>
+<span class="sd">            state plane coordinates</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of bounding box coordinates (lower_left, upper_right)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Get bounding box for opendss network</span>
+    <span class="c1"># Do a basic check on the path</span>
+    <span class="n">master_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">master_file</span><span class="p">)</span>
+    <span class="n">path_validation</span><span class="p">(</span><span class="n">master_file</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attempting to read case file &gt;&gt; </span><span class="si">{</span><span class="n">master_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Clear memory and compile dss file</span>
+    <span class="n">dss</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="s2">&quot;Clear&quot;</span><span class="p">)</span>
+    <span class="n">dss</span><span class="o">.</span><span class="n">Basic</span><span class="o">.</span><span class="n">ClearAll</span><span class="p">()</span>
+    <span class="n">execute_dss_command</span><span class="p">(</span><span class="n">dss</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Redirect </span><span class="si">{</span><span class="n">master_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get all the points</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">dss</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">AllBusNames</span><span class="p">():</span>
+        <span class="n">dss</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveBus</span><span class="p">(</span><span class="n">bus</span><span class="p">)</span>
+        <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">dss</span><span class="o">.</span><span class="n">Bus</span><span class="o">.</span><span class="n">X</span><span class="p">(),</span> <span class="n">dss</span><span class="o">.</span><span class="n">Bus</span><span class="o">.</span><span class="n">Y</span><span class="p">()])</span>
+
+    <span class="c1"># Create a multipoint to get bounds</span>
+    <span class="n">multi_points</span> <span class="o">=</span> <span class="n">MultiPoint</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+    <span class="n">bounds</span> <span class="o">=</span> <span class="n">multi_points</span><span class="o">.</span><span class="n">bounds</span>
+
+    <span class="c1"># Get EPSG value for converting into coordinate reference system</span>
+    <span class="k">if</span> <span class="n">stateplane</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="n">stateplane</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span>
+        <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="n">MultiStatePlaneError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The regions uses multiple stateplane coordinate system&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">epsg_value</span> <span class="o">=</span> <span class="n">stateplane</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># Let&#39;s project all the WGS84 coordinates into</span>
+    <span class="c1"># transformed coordinates this will make sure distance is in meter</span>
+    <span class="n">transformed_points</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">stateplane</span><span class="o">.</span><span class="n">from_lonlat</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="n">epsg_value</span><span class="p">)</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Create a multipoint from the transformed coordinates</span>
+    <span class="n">transformed_multipoint</span> <span class="o">=</span> <span class="n">MultiPoint</span><span class="p">(</span><span class="n">transformed_points</span><span class="p">)</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+
+    <span class="c1"># Get the bounds and convert back to wsg84 format</span>
+    <span class="n">transformed_bounds</span> <span class="o">=</span> <span class="n">transformed_multipoint</span><span class="o">.</span><span class="n">bounds</span>
+    <span class="n">bounds_wsg84</span> <span class="o">=</span> <span class="n">stateplane</span><span class="o">.</span><span class="n">to_lonlat</span><span class="p">(</span>
+        <span class="n">transformed_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">transformed_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">epsg_value</span>
+    <span class="p">)</span> <span class="o">+</span> <span class="n">stateplane</span><span class="o">.</span><span class="n">to_lonlat</span><span class="p">(</span>
+        <span class="n">transformed_bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">transformed_bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">epsg_value</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">bounds_wsg84</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_buses" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_buses</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Function to return list of all buses in opendss model.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+                <code><span title="typing.List">List</span></code>
+          </td>
+          <td><p>List of bus metadata object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_buses</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">:</span> <span class="n">dss</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Function to return list of all buses in opendss model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of bus metadata object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">buses_container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">AllBusNames</span><span class="p">():</span>
+        <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveBus</span><span class="p">(</span><span class="n">bus</span><span class="p">)</span>
+        <span class="n">buses_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">bus</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Bus&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;kv&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Bus</span><span class="o">.</span><span class="n">kVBase</span><span class="p">(),</span>
+                <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Bus</span><span class="o">.</span><span class="n">X</span><span class="p">(),</span>
+                <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Bus</span><span class="o">.</span><span class="n">Y</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">buses_container</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_capacitors" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_capacitors</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Function to return list of all capacitors in opendss model.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+                <code><span title="typing.List">List</span></code>
+          </td>
+          <td><p>List of capacitor metadata object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_capacitors</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">:</span> <span class="n">dss</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Function to return list of all capacitors in opendss model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of capacitor metadata object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">capacitors_container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveClass</span><span class="p">(</span><span class="s2">&quot;Capacitor&quot;</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">First</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">capacitor_name</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">Name</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">buses</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">BusNames</span><span class="p">()</span>
+        <span class="n">bus1</span> <span class="o">=</span> <span class="n">buses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">capacitors_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">capacitor_name</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Capacitor&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">bus1</span><span class="p">,</span>
+                <span class="s2">&quot;kv&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Capacitors</span><span class="o">.</span><span class="n">kV</span><span class="p">(),</span>
+                <span class="s2">&quot;kvar&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Capacitors</span><span class="o">.</span><span class="n">kvar</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">capacitors_container</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_line_sections" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_line_sections</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Function to return list of all line segments in opendss model.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+                <code><span title="typing.List">List</span></code>
+          </td>
+          <td><p>List of line segment metadata object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_line_sections</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">:</span> <span class="n">dss</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Function to return list of all line segments in opendss model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of line segment metadata object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">UNIT_MAPPER</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="mf">1.60934</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="mf">0.3048</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="mf">0.0003048</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="mf">0.0000254</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="mf">0.00001</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">sections_container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveClass</span><span class="p">(</span><span class="s2">&quot;Line&quot;</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">First</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">section_name</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">Name</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">buses</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">BusNames</span><span class="p">()</span>
+        <span class="n">bus1</span><span class="p">,</span> <span class="n">bus2</span> <span class="o">=</span> <span class="n">buses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">buses</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">sections_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">section_name</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;LineSegment&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">bus1</span><span class="p">,</span>
+                <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">bus2</span><span class="p">,</span>
+                <span class="s2">&quot;length_km&quot;</span><span class="p">:</span> <span class="n">UNIT_MAPPER</span><span class="p">[</span><span class="n">dss_instance</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Units</span><span class="p">()]</span>
+                <span class="o">*</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Length</span><span class="p">(),</span>
+                <span class="s2">&quot;ampacity&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">NormAmps</span><span class="p">(),</span>
+                <span class="s2">&quot;num_phase&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">NumPhases</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">sections_container</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_loads" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_loads</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Function to return list of all loads in opendss model.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+          </td>
+          <td><p>List of load metadata object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_loads</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function to return list of all loads in opendss model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of load metadata object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">loads_container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveClass</span><span class="p">(</span><span class="s2">&quot;Load&quot;</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">First</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">load_name</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">Name</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">buses</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">BusNames</span><span class="p">()</span>
+        <span class="n">bus1</span> <span class="o">=</span> <span class="n">buses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">loads_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">load_name</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Load&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">bus1</span><span class="p">,</span>
+                <span class="s2">&quot;kw&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">kW</span><span class="p">(),</span>
+                <span class="s2">&quot;kvar&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">kvar</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">loads_container</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_pvsystems" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_pvsystems</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Function to return list of all pv systems in opendss model.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+                <code><span title="typing.List">List</span></code>
+          </td>
+          <td><p>List of PVsystem metadata object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_pvsystems</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">:</span> <span class="n">dss</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Function to return list of all pv systems in opendss model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of PVsystem metadata object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">pvs_container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveClass</span><span class="p">(</span><span class="s2">&quot;PVSystem&quot;</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">First</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pv_name</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">Name</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">buses</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">BusNames</span><span class="p">()</span>
+        <span class="n">bus1</span> <span class="o">=</span> <span class="n">buses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">pvs_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">pv_name</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PVSystem&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">bus1</span><span class="p">,</span>
+                <span class="s2">&quot;rated_power&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">PVSystems</span><span class="o">.</span><span class="n">Pmpp</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">pvs_container</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="erad.utils.opendss_utils.get_transformers" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_transformers</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Function to return list of transformers in opendss models.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dss_instance</code></td>
+          <td>
+                <code><span title="opendssdirect">dss</span></code>
+          </td>
+          <td><p>OpenDSS instance with models preloaded</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>List</code></td>          <td>
+                <code><span title="typing.List">List</span></code>
+          </td>
+          <td><p>List of transformer metadata object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>erad\utils\opendss_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_transformers</span><span class="p">(</span><span class="n">dss_instance</span><span class="p">:</span> <span class="n">dss</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Function to return list of transformers in opendss models.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dss_instance (dss): OpenDSS instance with models preloaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List: List of transformer metadata object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">transformer_container</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dss_instance</span><span class="o">.</span><span class="n">Circuit</span><span class="o">.</span><span class="n">SetActiveClass</span><span class="p">(</span><span class="s2">&quot;Transformer&quot;</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">First</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">trans_name</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">Name</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">buses</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">BusNames</span><span class="p">()</span>
+        <span class="n">bus1</span><span class="p">,</span> <span class="n">bus2</span> <span class="o">=</span> <span class="n">buses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">buses</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">transformer_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">trans_name</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Transformer&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">bus1</span><span class="p">,</span>
+                <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">bus2</span><span class="p">,</span>
+                <span class="s2">&quot;kva&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">Transformers</span><span class="o">.</span><span class="n">kVA</span><span class="p">(),</span>
+                <span class="s2">&quot;num_phase&quot;</span><span class="p">:</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">CktElement</span><span class="o">.</span><span class="n">NumPhases</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">dss_instance</span><span class="o">.</span><span class="n">ActiveClass</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">transformer_container</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+              
+            </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../utils_hifld_utils/" class="md-footer__link md-footer__link--prev" aria-label="Previous: utils.hifld_utils" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              utils.hifld_utils
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../utils_util/" class="md-footer__link md-footer__link--next" aria-label="Next: utils.util" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              utils.util
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "sarch.highlight", "content.tabs.link", "content.code.annotate"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js"></script>
+      
+    
+  </body>
+</html>
