@@ -3,31 +3,6 @@ Graph based python tool for computing equitable resilience
 
 [Visit full documentation here](https://github.nrel.gov/pages/ERAD/erad/)
 
-### :rocket: Installation
-
-1. Create a virtual environment using Anaconda
-
-```
-    conda create -n erad python==3.9
-```
-
-After creating the environment activate the environment
-
-```
- conda activate erad
-```
-
-2. If you are on windows install these pakages first. Otherwise proceed to step 3.
-
-```
-    conda install shapely
-    conda install geopandas
-```
-
-3. Install the package using the command below
-
-```
-    pip install -e.
 ```
 ### :point_right: Generating CSV data set to load to Graph database
 
