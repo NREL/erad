@@ -1,0 +1,65 @@
+site_name: ERAD
+
+theme:
+  name: "material"
+  features:
+    - search.suggest
+    - sarch.highlight
+    - content.tabs.link
+    - content.code.annotate
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/git-alt
+plugins:
+  - mkdocstrings
+  - search
+
+repo_url: https://github.nrel.gov/ERAD/erad
+repo_name: nrel/erad
+
+
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js
+
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - codehilite
+  - pymdownx.details
+
+
+nav:
+  - Welcome: index.md
+  - Tutorials: 
+    - Compute resilience metrics: tutorial_resilience_metrics.md
+  - How to Guides: how-to-guides.md
+  - References:
+    - utils.ditto_utils: utils_ditto_utils.md
+    - utils.hifld_utils: utils_hifld_utils.md
+    - utils.opendss_utils: utils_opendss_utils.md
+    - utils.util: utils_util.md
+    - visualization.plot_graph: visualization_plot_graph.md
+    - db.neo4j: db_neo4j.md
+    - exceptions: exceptions.md
+  - Guide to Developers: developers-guide.md

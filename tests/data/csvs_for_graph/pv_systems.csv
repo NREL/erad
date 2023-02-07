@@ -1,0 +1,4 @@
+name,capacity,anti_islanding,owner,bus
+pvsystem_1,15,1,load.load_p35ulv7,p35ulv7
+pvsystem_2,10,1,load.load_p35ulv9_1,p35ulv9
+pvsystem_3,20,1,load.load_p35ulv5,p35ulv5

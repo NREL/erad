@@ -1,0 +1,10 @@
+New Transformer.tr(r:p35udt0-p35udt0lv) phases=1 windings=3 %loadloss=0.798816 %Noloadloss=0.472 normhkva=27.5 wdg=1 conn=wye bus=p35udt0.3 Kv=2.309 kva=25.0 EmergHKVA=37.5 %r=0.266272 wdg=2 conn=wye bus=p35udt0lv.1.0 Kv=0.12 kva=25.0 EmergHKVA=37.5 %r=0.532544 wdg=3 conn=wye bus=p35udt0lv.0.2 Kv=0.12 kva=25.0 EmergHKVA=37.5 %r=0.532544 XHL=2.4 XLT=2.4 XHT=1.6
+
+New Transformer.tr(r:p35udt1-p35udt1lv) phases=1 windings=3 %loadloss=0.49926 %Noloadloss=0.38 normhkva=82.5 wdg=1 conn=wye bus=p35udt1.1 Kv=2.309 kva=75.0 EmergHKVA=112.5 %r=0.16642 wdg=2 conn=wye bus=p35udt1lv.1.0 Kv=0.12 kva=75.0 EmergHKVA=112.5 %r=0.33284 wdg=3 conn=wye bus=p35udt1lv.0.2 Kv=0.12 kva=75.0 EmergHKVA=112.5 %r=0.33284 XHL=2.4 XLT=2.4 XHT=1.6
+
+New Transformer.tr(r:p35udt2-p35udt2lv) phases=1 windings=3 %loadloss=0.798816 %Noloadloss=0.472 normhkva=27.5 wdg=1 conn=wye bus=p35udt2.2 Kv=2.309 kva=25.0 EmergHKVA=37.5 %r=0.266272 wdg=2 conn=wye bus=p35udt2lv.1.0 Kv=0.12 kva=25.0 EmergHKVA=37.5 %r=0.532544 wdg=3 conn=wye bus=p35udt2lv.0.2 Kv=0.12 kva=25.0 EmergHKVA=37.5 %r=0.532544 XHL=2.4 XLT=2.4 XHT=1.6
+
+New Transformer.tr(r:p35udt3-p35udt3lv) phases=3 windings=2 %loadloss=2.1568 %Noloadloss=0.516667 normhkva=165.0 wdg=1 conn=delta Kv=4.0 kva=150.0 EmergHKVA=225.0 %R=1.0784 bus=p35udt3 wdg=2 conn=wye Kv=0.48 kva=150.0 EmergHKVA=225.0 %R=1.0784 bus=p35udt3lv XHL=3.39
+
+New Transformer.tr(r:p35udt4-p35udt4lv) phases=1 windings=3 %loadloss=0.798816 %Noloadloss=0.472 normhkva=27.5 wdg=1 conn=wye bus=p35udt4.2 Kv=2.309 kva=25.0 EmergHKVA=37.5 %r=0.266272 wdg=2 conn=wye bus=p35udt4lv.1.0 Kv=0.12 kva=25.0 EmergHKVA=37.5 %r=0.532544 wdg=3 conn=wye bus=p35udt4lv.0.2 Kv=0.12 kva=25.0 EmergHKVA=37.5 %r=0.532544 XHL=2.4 XLT=2.4 XHT=1.6
+

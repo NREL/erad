@@ -1,0 +1,44 @@
+
+****** Get all the nodes ******
+
+MATCH (n) RETURN n
+
+****** Get all the relationships ******
+
+MATCH ()-[r]->() RETURN r
+
+****** Delete all nodes ******
+
+MATCH (n) DELETE n
+
+****** Delete all relationships ******
+
+MATCH ()-[r]->() DELETE r
+
+****** Find nodes within a circle ******
+
+WITH point({latitude: 36.64150667896275, longitude:	-121.261797882961 }) AS poi
+MATCH (n)
+WHERE point.distance(point({latitude:n.latitude, longitude: n.longitude}), poi) < 2000
+RETURN n
+
+****** Shortest path between nodes ******
+
+MATCH (source:P4R_node {name: 'p4rlv163'})
+CALL gds.bfs.stream.estimate('neo4j', {
+    sourceNode: source
+})
+YIELD nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
+RETURN nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
+
+
+****** Breadth First Traversal ******
+
+CALL gds.graph.project('myGraph', 'P4R_node', 'CONDUCTOR')
+
+MATCH (source:P4R_node {name: 'p4rlv163'})
+CALL gds.bfs.stream.estimate('myGraph', {
+    sourceNode: source
+})
+YIELD nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory
+RETURN nodeCount, relationshipCount, bytesMin, bytesMax, requiredMemory

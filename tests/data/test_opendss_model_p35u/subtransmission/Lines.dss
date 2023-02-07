@@ -1,0 +1,10 @@
+New Line.l(r:p35uhs0_69-p35uts0_69) Units=km Length=0.001 bus1=p35uhs0_69-p35uts0_69xx.1.2.3 bus2=p35uhs0_69-p35uts0_69x.1.2.3 switch=n enabled=y phases=3 Linecode=3P_OH_AL_ACSR_477kcmil_Hawk_3
+
+New Line.breaker(r:p35uts0_69-st_mat)p35u_9 Units=km Length=0.001 bus1=st_mat.1.2.3 bus2=p35uts0_69-st_matxx.1.2.3 switch=y enabled=y phases=3 Linecode=breaker_3
+
+New Line.breaker(r:p35uts0_69-st_mat)p35u_10 Units=km Length=0.001 bus1=p35uts0_69-st_matx.1.2.3 bus2=p35uts0_69.1.2.3 switch=y enabled=y phases=3 Linecode=breaker_3
+
+New Line.breaker(r:p35uhs0_69-p35uts0_69)p35u_13 Units=km Length=0.001 bus1=p35uts0_69.1.2.3 bus2=p35uhs0_69-p35uts0_69xx.1.2.3 switch=y enabled=y phases=3 Linecode=breaker_3
+
+New Line.breaker(r:p35uhs0_69-p35uts0_69)p35u_14 Units=km Length=0.001 bus1=p35uhs0_69-p35uts0_69x.1.2.3 bus2=p35uhs0_69.1.2.3 switch=y enabled=y phases=3 Linecode=breaker_3
+

@@ -1,0 +1,32 @@
+New Load.load_p35ulv1_1 conn=wye bus1=p35ulv1.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=3.1096154089603396 kvar=0.8999536352252115 Phases=1 !yearly=com_kw_20810_pu
+
+New Load.load_p35ulv1_2 conn=wye bus1=p35ulv1.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=3.1096154089603396 kvar=0.8999536352252115 Phases=1 !yearly=com_kw_20810_pu
+
+New Load.load_p35ulv2_1 conn=wye bus1=p35ulv2.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=1.7017294192196202 kvar=0.31733576760167176 Phases=1 !yearly=com_kw_17644_pu
+
+New Load.load_p35ulv2_2 conn=wye bus1=p35ulv2.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=1.7017294192196202 kvar=0.31733576760167176 Phases=1 !yearly=com_kw_17644_pu
+
+New Load.load_p35ulv3_1 conn=wye bus1=p35ulv3.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=3.1154131571830552 kvar=1.0362320526286772 Phases=1 !yearly=com_kw_34081_pu
+
+New Load.load_p35ulv3_2 conn=wye bus1=p35ulv3.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=3.1154131571830552 kvar=1.0362320526286772 Phases=1 !yearly=com_kw_34081_pu
+
+New Load.load_p35ulv4_1 conn=wye bus1=p35ulv4.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=6.2144140360104805 kvar=1.7877808629201233 Phases=1 !yearly=com_kw_35442_pu
+
+New Load.load_p35ulv4_2 conn=wye bus1=p35ulv4.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=6.2144140360104805 kvar=1.7877808629201233 Phases=1 !yearly=com_kw_35442_pu
+
+New Load.load_p35ulv5 conn=wye bus1=p35ulv5.1.2.3 kV=0.48 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=36.93502983927156 kvar=10.984801665360203 Phases=3 !yearly=com_kw_20717_pu
+
+New Load.load_p35ulv6_1 conn=wye bus1=p35ulv6.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=1.1522187211102024 kvar=0.1254646123654986 Phases=1 !yearly=com_kw_33747_pu
+
+New Load.load_p35ulv6_2 conn=wye bus1=p35ulv6.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=1.1522187211102024 kvar=0.1254646123654986 Phases=1 !yearly=com_kw_33747_pu
+
+New Load.load_p35ulv7 conn=wye bus1=p35ulv7.1.2.3 kV=0.48 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=18.271253786773748 kvar=5.700527191902824 Phases=3 !yearly=com_kw_19668_pu
+
+New Load.load_p35ulv8_1 conn=wye bus1=p35ulv8.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=8.327724284981663 kvar=1.1098732244717968 Phases=1 !yearly=com_kw_41321_pu
+
+New Load.load_p35ulv8_2 conn=wye bus1=p35ulv8.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=8.327724284981663 kvar=1.1098732244717968 Phases=1 !yearly=com_kw_41321_pu
+
+New Load.load_p35ulv9_1 conn=wye bus1=p35ulv9.1 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=7.390444193104823 kvar=2.0131488313883352 Phases=1 !yearly=com_kw_20970_pu
+
+New Load.load_p35ulv9_2 conn=wye bus1=p35ulv9.2 kV=0.12 Vminpu=0.8 Vmaxpu=1.2 model=1 kW=7.390444193104823 kvar=2.0131488313883352 Phases=1 !yearly=com_kw_20970_pu
+

@@ -1,0 +1,8 @@
+name,source,target,kva,num_phase
+transformer.sb5_p35uhs0_4_trans_439,sb5_p35uhs0_4_node_5_12,sb5_p35uhs0_4_node_5_13,8000,3
+transformer.tr(r:p35udt0-p35udt0lv),p35udt0,p35udt0lv,25,1
+transformer.tr(r:p35udt1-p35udt1lv),p35udt1,p35udt1lv,75,1
+transformer.tr(r:p35udt2-p35udt2lv),p35udt2,p35udt2lv,25,1
+transformer.tr(r:p35udt3-p35udt3lv),p35udt3,p35udt3lv,150,3
+transformer.tr(r:p35udt4-p35udt4lv),p35udt4,p35udt4lv,25,1
+transformer.tr(r:p35uts0_69-st_mat),p35uts0_69-st_matxx,p35uts0_69-st_matx,300000,3

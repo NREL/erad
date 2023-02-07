@@ -1,0 +1,4 @@
+name,kw,kwh,owner,soc,bus
+es_1,10,50,load.load_p35ulv7,65,p35ulv7
+es_2,5,20,load.load_p35ulv9_1,80,p35ulv9
+es_3,20,100,load.load_p35ulv5,50,p35ulv5

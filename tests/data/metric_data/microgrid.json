@@ -1,0 +1,128 @@
+{
+    "weak_component_0": {
+        "length": 21,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [],
+        "source_capacity": 0,
+        "sink_capacity": 0
+    },
+    "weak_component_1": {
+        "length": 15,
+        "max_flow": 15.0,
+        "sources": [
+            "es_2",
+            "pvsystem_2"
+        ],
+        "sinks": [
+            "load.load_p35ulv9_1",
+            "load.load_p35ulv2_2",
+            "load.load_p35ulv2_1",
+            "load.load_p35ulv9_2"
+        ],
+        "source_capacity": 15.0,
+        "sink_capacity": 3.7087819233838175
+    },
+    "weak_component_2": {
+        "length": 18,
+        "max_flow": 65.0,
+        "sources": [
+            "pvsystem_3",
+            "es_1",
+            "es_3",
+            "pvsystem_1"
+        ],
+        "sinks": [
+            "load.load_p35ulv4_2",
+            "load.load_p35ulv5",
+            "load.load_p35ulv7",
+            "load.load_p35ulv4_1"
+        ],
+        "source_capacity": 65.0,
+        "sink_capacity": 13.157753142641281
+    },
+    "weak_component_3": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [
+            "load.load_p35ulv1_2",
+            "load.load_p35ulv1_1"
+        ],
+        "source_capacity": 0,
+        "sink_capacity": 1.2589209665423802
+    },
+    "weak_component_4": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [
+            "load.load_p35ulv8_2",
+            "load.load_p35ulv8_1"
+        ],
+        "source_capacity": 0,
+        "sink_capacity": 2.1820243445021417
+    },
+    "weak_component_5": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [
+            "load.load_p35ulv3_1",
+            "load.load_p35ulv3_2"
+        ],
+        "source_capacity": 0,
+        "sink_capacity": 1.4742565923203463
+    },
+    "weak_component_6": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [],
+        "source_capacity": 0,
+        "sink_capacity": 0
+    },
+    "weak_component_7": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [
+            "load.load_p35ulv6_1",
+            "load.load_p35ulv6_2"
+        ],
+        "source_capacity": 0,
+        "sink_capacity": 0.49718488512825887
+    },
+    "weak_component_8": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [],
+        "source_capacity": 0,
+        "sink_capacity": 0
+    },
+    "weak_component_9": {
+        "length": 2,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [],
+        "source_capacity": 0,
+        "sink_capacity": 0
+    },
+    "weak_component_10": {
+        "length": 3,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [],
+        "source_capacity": 0,
+        "sink_capacity": 0
+    },
+    "weak_component_11": {
+        "length": 2,
+        "max_flow": 0,
+        "sources": [],
+        "sinks": [],
+        "source_capacity": 0,
+        "sink_capacity": 0
+    }
+}

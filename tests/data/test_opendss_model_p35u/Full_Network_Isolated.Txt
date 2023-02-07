@@ -1,0 +1,92 @@
+
+ISOLATED CIRCUIT ELEMENT REPORT
+
+
+***  THE FOLLOWING BUSES HAVE NO CONNECTION TO THE SOURCE ***
+
+
+***********  THE FOLLOWING SUB NETWORKS ARE ISOLATED ************
+
+
+***********  THE FOLLOWING ENABLED ELEMENTS ARE ISOLATED ************
+
+
+***  THE FOLLOWING BUSES ARE NOT CONNECTED TO ANY POWER DELIVERY ELEMENT ***
+
+
+***********  CONNECTED CIRCUIT ELEMENT TREE ************
+
+(Lexical Level) Element name
+
+(0) Vsource.source
+(1) Line.breaker(r:p35uts0_69-st_mat)p35u_9
+(2) Transformer.tr(r:p35uts0_69-st_mat)
+(3) Line.breaker(r:p35uts0_69-st_mat)p35u_10
+(4) Line.breaker(r:p35uhs0_69-p35uts0_69)p35u_13
+(5) Line.l(r:p35uhs0_69-p35uts0_69)
+(6) Line.breaker(r:p35uhs0_69-p35uts0_69)p35u_14
+(7) Line.sb5_p35uhs0_4_426
+(8) Line.sb5_p35uhs0_4_434
+(9) Line.sb5_p35uhs0_4_435
+(10) Line.sb5_p35uhs0_4_428
+(11) Line.sb5_p35uhs0_4_433
+(12) Transformer.sb5_p35uhs0_4_trans_439
+(13) Line.sb5_p35uhs0_4_432
+(14) Line.sb5_p35uhs0_4_430
+(15) Line.sb5_p35uhs0_4_440
+(16) Line.sb5_p35uhs0_4_443
+(17) Line.sb5_p35uhs0_4_449
+(14) Line.sb5_p35uhs0_4_456
+(15) Line.sb5_p35uhs0_4_453
+(16) Line.sb5_p35uhs0_4_454
+(17) Line.sb5_p35uhs0_4_457
+(14) Line.sb5_p35uhs0_4_429
+(15) Line.sb5_p35uhs0_4_441
+(16) Line.sb5_p35uhs0_4_444
+(17) Line.sb5_p35uhs0_4_450
+(18) Line.l(r:p35udt1-p35uhs0_4)
+(19) Line.disswitch(r:p35udt1-p35udt4)p35u_21
+(20) Line.fuse(r:p35udt1-p35udt4)p35u_15
+(21) Line.l(r:p35udt1-p35udt4)_s0
+(22) Line.l(r:p35udt1-p35udt4)_s1
+(23) Transformer.tr(r:p35udt4-p35udt4lv)
+(24) Line.l(r:p35udt4lv-p35ulv6)
+[SHUNT], Load.load_p35ulv6_1
+[SHUNT], Load.load_p35ulv6_2
+(19) Line.goab_disswitch(r:p35udt0-p35udt1)p35u_17
+(20) Line.l(r:p35udt0-p35udt1)
+(21) Line.goab_disswitch(r:p35udt0-p35udt3)p35u_18
+(22) Line.l(r:p35udt0-p35udt3)
+(23) Line.disswitch(r:p35udt2-p35udt3)p35u_20
+(24) Line.fuse(r:p35udt2-p35udt3)p35u_16
+(25) Line.l(r:p35udt2-p35udt3)
+(26) Transformer.tr(r:p35udt2-p35udt2lv)
+(27) Line.l(r:p35udt2lv-p35ulv4)
+[SHUNT], Load.load_p35ulv4_1
+[SHUNT], Load.load_p35ulv4_2
+(23) Transformer.tr(r:p35udt3-p35udt3lv)
+(24) Line.l(r:p35udt3lv-p35ulv7)
+[SHUNT], Load.load_p35ulv7
+(24) Line.l(r:p35udt3lv-p35ulv5)
+[SHUNT], Load.load_p35ulv5
+(21) Transformer.tr(r:p35udt0-p35udt0lv)
+(22) Line.l(r:p35udt0lv-p35ulv2)
+[SHUNT], Load.load_p35ulv2_1
+[SHUNT], Load.load_p35ulv2_2
+(22) Line.l(r:p35udt0lv-p35ulv1)
+[SHUNT], Load.load_p35ulv1_1
+[SHUNT], Load.load_p35ulv1_2
+(19) Transformer.tr(r:p35udt1-p35udt1lv)
+(20) Line.l(r:p35udt1lv-p35ulv9)
+[SHUNT], Load.load_p35ulv9_1
+[SHUNT], Load.load_p35ulv9_2
+(20) Line.l(r:p35udt1lv-p35ulv8)
+[SHUNT], Load.load_p35ulv8_1
+[SHUNT], Load.load_p35ulv8_2
+(20) Line.l(r:p35udt1lv-p35ulv3)
+[SHUNT], Load.load_p35ulv3_1
+[SHUNT], Load.load_p35ulv3_2
+(14) Line.sb5_p35uhs0_4_431
+(15) Line.sb5_p35uhs0_4_442
+(16) Line.sb5_p35uhs0_4_445
+(17) Line.sb5_p35uhs0_4_451

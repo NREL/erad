@@ -1,0 +1,18 @@
+Clear
+
+New Circuit.feeder_p35udt1-p35uhs0_4x bus1=p35udt1-p35uhs0_4x pu=1.03 basekV=4.0 R1=1e-05 X1=1e-05 R0=1e-05 X0=1e-05
+
+Redirect LineCodes.dss
+Redirect Lines.dss
+Redirect Transformers.dss
+Redirect Loads.dss
+new monitor.m1 element=Line.l(r:p35udt1-p35uhs0_4) mode=0
+new monitor.m2 element=Line.l(r:p35udt1-p35uhs0_4) mode=1
+new energymeter.m3 Line.l(r:p35udt1-p35uhs0_4)
+
+Set Voltagebases=[0.12, 0.208, 0.48, 2.309, 4.0]
+
+Calcvoltagebases
+
+Buscoords Buscoords.dss
+set maxcontroliter=50
