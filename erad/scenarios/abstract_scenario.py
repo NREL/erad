@@ -9,6 +9,8 @@ from datetime import datetime
 from typing import *
 import shapely
 
+from erad.scenarios.common import AssetTypes
+
 class BaseScenario:
     
     """Base class for scenario defination.
@@ -30,6 +32,10 @@ class BaseScenario:
             timestamp (datetime): Scenario occurance time 
             kwargs (dict): Additional parameters relevant for a particular scenario type
         """
+        if probability_model is None:
+            probability_model = self.fragility_curves
+        self.valitate_user_defined_fragility_curves(probability_model)
+        
     
         if isinstance(geodata, Polygon):
            geodata = MultiPolygon([geodata]) 
@@ -76,7 +82,7 @@ class BaseScenario:
         """Method to increment simulation time for time evolviong scenarios."""
         raise NotImplementedError("Method needs to be defined in derived classes")
 
-    def calculate_survival_probability(self, assets : dict) -> dict:
+    def calculate_survival_probability(self, assets : dict, timestamp : datetime) -> dict:
         """Method to calculate survival probaility of asset types.
 
         Args:
@@ -88,3 +94,10 @@ class BaseScenario:
         """Method to plot survival probaility of in the region of interest"""
         raise NotImplementedError("Method needs to be defined in derived classes")
    
+    def asset_survial_probability(self, asset_type):
+        raise NotImplementedError("Method needs to be defined in derived classes")
+    
+    def valitate_user_defined_fragility_curves(self, distributions):
+        for asset_type in distributions:
+            assert AssetTypes.has_asset(asset_type), f"{asset_type} is not a valid asset type. Valid options are {list(AssetTypes.__members__.keys())}"
+        return

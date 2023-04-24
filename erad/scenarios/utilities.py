@@ -57,17 +57,20 @@ class ProbabilityFunctionBuilder:
         """Sample the distribution """
         return self.dist.rvs(*self.params, size=1)[0]
 
-    def plot_cdf(self, x:np.linspace) -> None:
+    def plot_cdf(self, x:np.linspace, ax =None, label="") -> None:
         """Plot the cumalative distribution fuction"""
         cdf = self.dist.cdf
-        plt.plot(x,cdf(x, *self.params))
-        plt.show()
+        if ax is None:
+            plt.plot(x,cdf(x, *self.params), label=label)
+        else:
+            ax.plot(x,cdf(x, *self.params), label=label)
+    
 
-    def survival_probability(self, distance: float) -> float:
+    def probability(self, value: float) -> float:
         """Calculates survival probability of a given asset.
 
         Args:
-            distance (float): Distance of asset the fire boundary
+            value (float): value for vetor of interest. Will change with scenarions
         """
         cdf = self.dist.cdf
-        return cdf(distance, *self.params)
+        return cdf(value, *self.params)
