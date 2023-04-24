@@ -89,14 +89,15 @@ def energy_resilience_by_customer(
                 f"""
                     MATCH (lo:Load)
                     MATCH (cs:{cs})
-                    WHERE cs.survive = 1 
                     """
                 + """
-                    WITH lo, 
+                    WITH lo,cs, 
                         point.distance(point({longitude: lo.longitude, latitude:lo.latitude}), 
                         point({longitude: cs.longitude, latitude:cs.latitude}))/1000 AS d
-                    RETURN lo.name, count(d)/sum(d) AS gamma
+                    RETURN lo.name, sum(cs.survival_probability/d) AS gamma
                     """
+                    # count(d)/sum(d) AS gamma
+                    # WHERE cs.survive = 1 
             )
             result = session.read_transaction(
                 lambda tx: tx.run(cypher_query).data()
