@@ -26,6 +26,7 @@ class WindScenario(BaseScenario, GeoUtilities):
     """
     
     fragility_curves = {
+        #Extending energy system modelling to include extreme weather risks and application to hurricane events in Puerto Rico
         AssetTypes.substation.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.solar_panels.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.buried_lines.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
