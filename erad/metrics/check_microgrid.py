@@ -37,6 +37,12 @@ def create_directed_graph(
     return relationship{.*} , sourceNode {.*}, targetNode{.*}
     """
 
+    # Gettings relations between customers and buses
+    critical_infra_bus_network_query = """
+    MATCH (sourceNode:Bus)-[relationship:GETS_POWER_FROM]-(targetNode)
+    return relationship{.*} , sourceNode {.*}, targetNode{.*}
+    """
+
     # Gettting relations between PVs and buses
     pv_bus_network_query = """
     MATCH (sourceNode:Bus)-[relationship:INJECTS_ACTIVE_POWER_TO]-(targetNode:Solar)
@@ -55,6 +61,7 @@ def create_directed_graph(
         customer_bus_network_query,
         pv_bus_network_query,
         es_bus_network_query,
+        critical_infra_bus_network_query
     ]:
 
         with driver.session() as session:
@@ -120,14 +127,7 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
             sinks, sources = [], []
             for node in wcc_graph.nodes():
                 # Connect all loads to infinity sink
-                if "load." in node:
-                    wcc_graph.add_edge(node, "infinity_sink", capacity=1e9)
-                    wcc_graph.add_edge("infinity_sink", node, capacity=1e9)
-                    sinks.append(node)
-                    sink_capacity += math.sqrt(
-                        node_data[node]["kw"] ** 2
-                        + node_data[node]["kvar"] ** 2
-                    ) * float(node_data[node]["critical_load_factor"])
+                
 
                 if "pv" in node or "es_" in node:
                     wcc_graph.add_edge(node, "infinity_source", capacity=1e9)
@@ -138,6 +138,14 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
                         if "kw" in node_data[node]
                         else node_data[node]["capacity"]
                     )
+                elif "load" in node or node_data.get(node, {}).get('survive', None) is not None :
+                    wcc_graph.add_edge(node, "infinity_sink", capacity=1e9)
+                    wcc_graph.add_edge("infinity_sink", node, capacity=1e9)
+                    sinks.append(node)
+                    sink_capacity += math.sqrt(
+                        node_data[node].get('kW', 0) ** 2
+                        + node_data[node].get('kvar', 0) ** 2
+                    ) * float(node_data[node].get("critical_load_factor", 0))
 
             flow_value, _ = nx.maximum_flow(
                 wcc_graph, "infinity_source", "infinity_sink", capacity="kva"
@@ -152,7 +160,8 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
                 "sink_capacity": sink_capacity,
             }
 
-    with open(output_json_path, "w") as fpointer:
-        json.dump(subgraphs, fpointer)
+    if output_json_path:
+        with open(output_json_path, "w") as fpointer:
+            json.dump(subgraphs, fpointer)
 
     return subgraphs
