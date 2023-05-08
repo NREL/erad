@@ -30,12 +30,12 @@ class WindScenario(BaseScenario, GeoUtilities):
         AssetTypes.substation.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.solar_panels.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.buried_lines.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
-        AssetTypes.wind_turbines.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
-        AssetTypes.battery_storage.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
-        AssetTypes.transmission_poles.name  :   ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.wind_turbines.name :  ProbabilityFunctionBuilder("normal", [0.8, 10, 5]),
+        #AssetTypes.battery_storage.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        #AssetTypes.transmission_poles.name  :   ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.distribution_poles.name  :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
-        AssetTypes.transmission_overhead_lines.name  : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
-        AssetTypes.distribution_overhead_lines.name  :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+       # AssetTypes.transmission_overhead_lines.name  : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.distribution_overhead_lines.name  :  ProbabilityFunctionBuilder("beta", [0.8, 10, 5]),
     }
     
     def __init__(self,  multipolygon : MultiPolygon , probability_model : dict, timestamp : datetime) -> None:

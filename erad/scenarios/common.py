@@ -19,6 +19,8 @@ class AssetTypes(IntEnum):
     distribution_poles = 6
     transmission_overhead_lines = 7
     distribution_overhead_lines = 8
+    #substructures
+    #conduit_burial
 
     @classmethod
     def has_value(cls, value):

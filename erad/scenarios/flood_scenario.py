@@ -64,6 +64,14 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             self.levels = pd.DataFrame()
             self.real_time()
         else:
+            from shapely import wkt
+            self.flows = pd.read_csv(kwargs['file_flow'])
+            self.levels = pd.read_csv(kwargs['file_levels'])
+            df = pd.read_csv(kwargs['file_gaugues'])
+            df['geometry'] = df['geometry'].apply(wkt.loads)
+            crs = {'init': 'epsg:4326'}
+            self.gauges = gpd.GeoDataFrame(df).set_geometry('geometry')
+            #self.gauges = gpd.read_file(kwargs['file_gaugues'])
             pass
         #self.plot = DynamicUpdate(self.X, self.Y, self.Z, self.flows)
         return
@@ -105,6 +113,7 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             gauge_id = gauge['GaugeLID']
             url = f'https://water.weather.gov/ahps2/hydrograph_to_xml.php?gage={gauge_id}&output=xml'
             response = requests.get(url)
+            #print(response.text)
             data = xmltodict.parse(response.text)
             times_series_data = data['site']['observed']['datum']
             time_points = []
@@ -112,14 +121,15 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             level_points =[]
             for data_point in times_series_data:
                 time_points.append(data_point['valid']['#text'])
-                flow_points.append(float(data_point['primary']['#text']))
-                level_points.append(float(data_point['secondary']['#text']))
+                flow_points.append(float(data_point['secondary']['#text']))
+                level_points.append(float(data_point['primary']['#text']))
             index =pd.to_datetime(time_points)
             flow.index =index
             flow[gauge_id] = flow_points
             level.index =index
             level[gauge_id] = level_points
-            
+            print(flow)
+            print(level)
             all_flows = flow.merge(all_flows, right_index=True, left_index=True, how="outer")
             all_levels = level.merge(all_levels, right_index=True, left_index=True, how="outer")
         return all_flows, all_levels
@@ -314,27 +324,27 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         for idx, row in self.gauges.iterrows():
             
             gauge = row['GaugeLID']
-            flow = self.flows[gauge][timestamp] 
+            level = self.levels[gauge][timestamp] 
             
-            if flow > 0: 
-                lat = row['Latitude']
-                lon = row['Longitude'] 
-                x_i, y_i = stateplane.from_lonlat(lon, lat)
-                coords[0].append(x_i)
-                coords[1].append(y_i)
-                
-               
-                if self.use_api:
-                    elevation = self.create_elevation_using_api(lat, lon)
-                    water_elevation = self.create_elevation_using_api(lat, lon) + float(flow)
-                else:
-                    elevation = self.get_elevation_by_latlong(lat, lon)
-                    water_elevation = self.get_elevation_by_latlong(lat, lon) + float(flow)
+            
+            lat = row['Latitude']
+            lon = row['Longitude'] 
+            x_i, y_i = stateplane.from_lonlat(lon, lat)
+            coords[0].append(x_i)
+            coords[1].append(y_i)
+            
+            
+            if self.use_api:
+                elevation = self.create_elevation_using_api(lat, lon)
+                water_elevation = self.create_elevation_using_api(lat, lon) + float(level)
+            else:
+                elevation = self.get_elevation_by_latlong(lat, lon)
+                water_elevation = self.get_elevation_by_latlong(lat, lon) + float(level)
 
-                self.gauges["elevation"] = elevation
-                z.append(water_elevation) #water_elevation, flow
-                coords[2].append(f"Gauge: {gauge}\nElevation: {elevation}\nWater level: {flow}")
-                water_elevations.append(water_elevation)
+            self.gauges["elevation"] = elevation
+            z.append(water_elevation) #water_elevation, flow
+            coords[2].append(f"Gauge: {gauge}\nElevation: {elevation}\nWater level: {level}")
+            water_elevations.append(water_elevation)
         self.gauges["water_level"] = water_elevations
         
         m = self.polyfit2d(np.array(coords[0]), np.array(coords[1]), np.array(z))
@@ -457,10 +467,21 @@ if __name__ == '__main__':
     from erad.scenarios.common import asset_list
     
     assets, multiploygon = asset_list(38.46, -122.95, 38.53, -122.80)  
-    
-    flood_1 = FlooadScenario.from_live_data(multiploygon, None, None, None, None)
-    timestamp = flood_1.valid_timepoints[-1]
-    for timestamp in flood_1.valid_timepoints:
-        flood_1.calculate_survival_probability(assets, timestamp)
-        time.sleep(0.01)
+    flood_1 = FlooadScenario(
+        multiploygon, 
+        None, 
+        None, 
+        file_flow=r'C:\Users\alatif\Documents\GitHub\erad\erad\scenarios\flows.csv',
+        file_levels=r'C:\Users\alatif\Documents\GitHub\erad\erad\scenarios\levels.csv',
+        file_gaugues=r'C:\Users\alatif\Documents\GitHub\erad\erad\scenarios\gauges.csv',
+        )
+    timestamp = flood_1.valid_timepoints[0]
+    assets = flood_1.calculate_survival_probability(assets, timestamp)
+    print(assets)
+    # flood_1 = FlooadScenario.from_live_data(multiploygon, None, None, None, None)
+    # timestamp = flood_1.valid_timepoints[-1]
+    # for timestamp in flood_1.valid_timepoints:
+    #     assets = flood_1.calculate_survival_probability(assets, timestamp)
+    #     print(assets)
+    #     time.sleep(0.01)
     
