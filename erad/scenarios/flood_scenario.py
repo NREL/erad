@@ -57,13 +57,15 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         self.kwargs = kwargs
         self.samples = 100
         self.use_api = True
-        self.flows = pd.DataFrame()
-        self.levels = pd.DataFrame()
+        
         self.map_elevation() 
         if 'type' in kwargs and kwargs['type'] == 'live':
+            self.flows = pd.DataFrame()
+            self.levels = pd.DataFrame()
             self.real_time()
-        
-        self.plot = DynamicUpdate(self.X, self.Y, self.Z, self.flows)
+        else:
+            pass
+        #self.plot = DynamicUpdate(self.X, self.Y, self.Z, self.flows)
         return
     
     @classmethod
@@ -76,6 +78,7 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         
     def real_time(self):
         self.gauges = self.get_flow_measurements(0)
+        self.gauges.to_csv("gauges.csv")
         flows, levels = self.gauges_in_polygon()
         for c in flows.columns:
             flows[c] = flows[c].interpolate(method='polynomial', order=2)
@@ -86,6 +89,8 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         levels = levels.bfill(axis = 0)
         self.flows = flows.resample("15T").interpolate()
         self.levels = levels.resample("15T").interpolate()
+        self.flows.to_csv("flows.csv")
+        self.levels.to_csv("levels.csv")
 
     @property
     def valid_timepoints(self):
@@ -307,25 +312,29 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         ]
         z = []
         for idx, row in self.gauges.iterrows():
-            lat = row['Latitude']
-            lon = row['Longitude'] 
-            x_i, y_i = stateplane.from_lonlat(lon, lat)
-            coords[0].append(x_i)
-            coords[1].append(y_i)
+            
             gauge = row['GaugeLID']
             flow = self.flows[gauge][timestamp] 
-           
-            if self.use_api:
-                elevation = self.create_elevation_using_api(lat, lon)
-                water_elevation = self.create_elevation_using_api(lat, lon) + float(flow)
-            else:
-                elevation = self.get_elevation_by_latlong(lat, lon)
-                water_elevation = self.get_elevation_by_latlong(lat, lon) + float(flow)
+            
+            if flow > 0: 
+                lat = row['Latitude']
+                lon = row['Longitude'] 
+                x_i, y_i = stateplane.from_lonlat(lon, lat)
+                coords[0].append(x_i)
+                coords[1].append(y_i)
+                
+               
+                if self.use_api:
+                    elevation = self.create_elevation_using_api(lat, lon)
+                    water_elevation = self.create_elevation_using_api(lat, lon) + float(flow)
+                else:
+                    elevation = self.get_elevation_by_latlong(lat, lon)
+                    water_elevation = self.get_elevation_by_latlong(lat, lon) + float(flow)
 
-            self.gauges["elevation"] = elevation
-            z.append(water_elevation) #water_elevation, flow
-            coords[2].append(f"Gauge: {gauge}\nElevation: {elevation}\nWater level: {flow}")
-            water_elevations.append(water_elevation)
+                self.gauges["elevation"] = elevation
+                z.append(water_elevation) #water_elevation, flow
+                coords[2].append(f"Gauge: {gauge}\nElevation: {elevation}\nWater level: {flow}")
+                water_elevations.append(water_elevation)
         self.gauges["water_level"] = water_elevations
         
         m = self.polyfit2d(np.array(coords[0]), np.array(coords[1]), np.array(z))
@@ -443,36 +452,13 @@ class DynamicUpdate():
 
 if __name__ == '__main__':
 
-    assets = asset_list()
-
-    samples = 100
-    x = np.linspace(38.46, 38.53, samples)
-    y = np.linspace(-122.95,  -122.80, samples)
-
-    p1 = Point(x.min(), y.min())
-    p2 = Point(x.max(), y.min())
-    p3 = Point(x.max(), y.max())
-    p4 = Point(x.min(), y.max())
-    pointList = [p1, p2, p3, p4, p1]
-    poly = Polygon(pointList)
-    mypoly = MultiPolygon([poly]) 
     
-    assets = {"overhead_power_lines" : {}}
-    asset_id = 0
-    for x1 in x:
-        for y1 in y:
-            px = Point(x1, y1)
-            if mypoly.contains(px):
-                assets["overhead_power_lines"][f"asset {asset_id}"] = {"coordinates" : (x1, y1)}
-                asset_id += 1
-             
-    prob_model = ProbabilityFunctionBuilder("norm", [4, 0.5])    
     
-    survival_model = {
-        "overhead_power_lines" : prob_model.survival_probability
-    }
+    from erad.scenarios.common import asset_list
     
-    flood_1 = FlooadScenario.from_live_data(mypoly, survival_model, None, None, None)
+    assets, multiploygon = asset_list(38.46, -122.95, 38.53, -122.80)  
+    
+    flood_1 = FlooadScenario.from_live_data(multiploygon, None, None, None, None)
     timestamp = flood_1.valid_timepoints[-1]
     for timestamp in flood_1.valid_timepoints:
         flood_1.calculate_survival_probability(assets, timestamp)
