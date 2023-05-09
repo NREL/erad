@@ -1,15 +1,20 @@
-from constants import FIRE_HISTORIC_GEODATAFRAME_PATH, DATA_FOLDER
+from erad.constants import FIRE_HISTORIC_GEODATAFRAME_PATH, DATA_FOLDER
 from shapely.geometry import MultiPolygon, Point, LineString
-from scenarios.utilities import ProbabilityFunctionBuilder
-from scenarios.abstract_scenario import BaseScenario
-from exceptions import FeatureNotImplementedError
-from scenarios.utilities import GeoUtilities
+from erad.scenarios.utilities import ProbabilityFunctionBuilder
+from erad.scenarios.abstract_scenario import BaseScenario
+from erad.exceptions import FeatureNotImplementedError
+from erad.scenarios.utilities import GeoUtilities
 import matplotlib.pyplot as plt
 from datetime import datetime
 import geopandas as gpd
 import numpy as np
+import random
 import pyproj
 import os
+
+from erad.scenarios.common import AssetTypes
+from erad.scenarios.utilities import ProbabilityFunctionBuilder
+
 
 class FireScenario(BaseScenario, GeoUtilities): 
     """Base class for FireScenario. Extends BaseScenario and GeoUtilities
@@ -19,6 +24,18 @@ class FireScenario(BaseScenario, GeoUtilities):
         probability_model (dict): Dictionary mapping asset types to probability funcitons
         timestamp (datetime): Scenario occurance time 
     """
+    
+    fragility_curves = {
+        AssetTypes.substation.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.solar_panels.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.buried_lines.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.wind_turbines.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.battery_storage.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.transmission_poles.name  :   ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.distribution_poles.name  :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.transmission_overhead_lines.name  : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+        AssetTypes.distribution_overhead_lines.name  :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
+    }
     
     def __init__(self,  multipolygon : MultiPolygon , probability_model : dict, timestamp : datetime) -> None:
         """Constructor for FireScenario.
@@ -31,14 +48,14 @@ class FireScenario(BaseScenario, GeoUtilities):
         
         
         super(FireScenario, self).__init__(multipolygon, probability_model, timestamp)     
-        return
+        return      
     
     @classmethod
     def from_dynamic_model(cls, multipolygon : MultiPolygon , probability_function : dict, timestamp : datetime):
         pass
     
     @classmethod
-    def from_historical_fire_by_code(cls, fire_code : str, probability_function : dict):
+    def from_historical_fire_by_code(cls, fire_code : str, probability_function : dict = None):
         """Class method for FireScenario.
 
         Args:
@@ -46,6 +63,7 @@ class FireScenario(BaseScenario, GeoUtilities):
             probability_function (dict): Dictionary mapping asset types to probability funcitons
         """
         
+            
         data_file = os.path.join(DATA_FOLDER, FIRE_HISTORIC_GEODATAFRAME_PATH)
         assert os.path.exists(data_file), f"The data file {data_file} not found"
         fire_data = gpd.read_file(data_file)
@@ -90,7 +108,7 @@ class FireScenario(BaseScenario, GeoUtilities):
         """Method to increment simulation time for time evolviong scenarios."""
         raise FeatureNotImplementedError()
 
-    def calculate_survival_probability(self, assets : dict, plot: bool) -> dict:
+    def calculate_survival_probability(self, assets : dict, timestamp : datetime, plot: bool) -> dict:
         """Method to calculate survival probaility of asset types.
 
         Args:
@@ -114,7 +132,7 @@ class FireScenario(BaseScenario, GeoUtilities):
                         distance = self.distance_from_boundary(coords)
                     except:
                         distance = self.distance_from_boundary(Point(coords.y, coords.x))
-                    survival_probability = probability_function(distance)
+                    survival_probability = probability_function.probability(distance*1000)
                 
                 assets[asset_type][asset_name]["survival_probability"] = survival_probability
                 assets[asset_type][asset_name]["distance_to_boundary"] = distance
@@ -140,28 +158,3 @@ class FireScenario(BaseScenario, GeoUtilities):
         plt.show()
 
 
-
-if __name__ == '__main__':
-    samples = 100
-    
-    x = np.linspace(41.255, 41.423, samples)
-    y = np.linspace(-117.33, -117.55, samples)
-    
-    assets = {"overhead_power_lines" : {}}
-    
-    asset_id = 0
-    for x1 in x:
-        for y1 in y:
-            assets["overhead_power_lines"][f"asset {asset_id}"] = {"coordinates" : (x1, y1)}
-            asset_id += 1
-             
-    prob_model = ProbabilityFunctionBuilder("norm", [4, 0.5])    
-    
-    survival_model = {
-        "overhead_power_lines" : prob_model.survival_probability
-    }
-    
-    Fire1 = FireScenario.from_historical_fire_by_code("GHP4", survival_model)
-    assets = Fire1.calculate_survival_probability(assets, True)
-    print(assets)
-    Fire1.plot()

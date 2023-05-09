@@ -18,3 +18,5 @@ stateplane
 graphdatascience
 scipy
 geopy
+rasterio
+xmltodict
