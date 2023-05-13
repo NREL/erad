@@ -58,22 +58,22 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         self.samples = 100
         self.use_api = True
         
-        self.map_elevation() 
+        # self.map_elevation() 
         if 'type' in kwargs and kwargs['type'] == 'live':
             self.flows = pd.DataFrame()
             self.levels = pd.DataFrame()
             self.real_time()
         else:
             from shapely import wkt
-            self.flows = pd.read_csv(kwargs['file_flow'])
-            self.levels = pd.read_csv(kwargs['file_levels'])
+            self.flows = pd.read_csv(kwargs['file_flow'],index_col=0, parse_dates=True)
+            self.levels = pd.read_csv(kwargs['file_levels'], index_col=0, parse_dates=True)
             df = pd.read_csv(kwargs['file_gaugues'])
             df['geometry'] = df['geometry'].apply(wkt.loads)
             crs = {'init': 'epsg:4326'}
             self.gauges = gpd.GeoDataFrame(df).set_geometry('geometry')
             #self.gauges = gpd.read_file(kwargs['file_gaugues'])
             pass
-        #self.plot = DynamicUpdate(self.X, self.Y, self.Z, self.flows)
+        # self.plot = DynamicUpdate(self.X, self.Y, self.Z, self.levels)
         return
     
     @classmethod
@@ -236,7 +236,9 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             )
         response = response.json()
         if response['status'] == 'success':
+            # print(response, '--')
             return response['data'][0] * 3.28084
+            
         else:
             print(response)
         
@@ -263,6 +265,7 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             response = response.json()
             if response['status'] == 'success':
                 Z_coords.extend(response['data'])
+                # print(response)
             else:
                 print(response)
         
@@ -315,7 +318,7 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         Args:
             assets (dict): The dictionary of all assets and their corresponding asset types
         """
-
+        print('Calculating survival probaiblity ...')
         water_elevations = []
         coords = [
             [],[],[]
@@ -326,7 +329,6 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             gauge = row['GaugeLID']
             level = self.levels[gauge][timestamp] 
             
-            
             lat = row['Latitude']
             lon = row['Longitude'] 
             x_i, y_i = stateplane.from_lonlat(lon, lat)
@@ -335,8 +337,11 @@ class FlooadScenario(BaseScenario, GeoUtilities):
             
             
             if self.use_api:
-                elevation = self.create_elevation_using_api(lat, lon)
-                water_elevation = self.create_elevation_using_api(lat, lon) + float(level)
+                # elevation = self.create_elevation_using_api(lat, lon)
+                # TODO: Don't know the different between level and elevation or
+                # how they relate 
+                elevation = row['Elevation_ft']
+                water_elevation = float(level) + elevation
             else:
                 elevation = self.get_elevation_by_latlong(lat, lon)
                 water_elevation = self.get_elevation_by_latlong(lat, lon) + float(level)
@@ -348,7 +353,7 @@ class FlooadScenario(BaseScenario, GeoUtilities):
         self.gauges["water_level"] = water_elevations
         
         m = self.polyfit2d(np.array(coords[0]), np.array(coords[1]), np.array(z))
-        self.z_ = np.zeros(self.X.shape)
+        # self.z_ = np.zeros(self.X.shape)
         
         for asset_type, asset_dict in assets.items():
             Xs = []
@@ -358,15 +363,16 @@ class FlooadScenario(BaseScenario, GeoUtilities):
                 Ys.append(asset_data['coordinates'][0])
                 x_i, y_i = stateplane.from_lonlat(asset_data['coordinates'][1], asset_data['coordinates'][0])
                 z_i = self.polyval2d(x_i, y_i, m)
-                assets[asset_type][asset]['asset_water_level_ft'] = self.polyval2d(x_i, y_i, m)
-            if self.use_api:             
-                asset_elevations_ft = self.create_elevation_profile_using_api(Xs, Ys)
-            else:
-                asset_elevations_ft = self.get_elevation_by_latlong(lat, lon)
+                assets[asset_type][asset]['asset_water_level_ft'] = z_i.tolist()  #list(self.polyval2d(x_i, y_i, m))
+            
+            # if self.use_api:    
+            #     asset_elevations_ft = self.create_elevation_profile_using_api(Xs, Ys)
+            # else:
+            #     asset_elevations_ft = self.get_elevation_by_latlong(lat, lon)
 
             i = 0
             for asset, asset_data in asset_dict.items():
-                h = asset_data['asset_water_level_ft'] - asset_elevations_ft[i]
+                h =   asset_data['asset_water_level_ft'] - asset_data['elevation_ft']
                 assets[asset_type][asset]['submerge_depth_ft'] = h
                 if asset_type in self.probability_model:
                     probability_function = self.probability_model[asset_type]
@@ -428,6 +434,7 @@ class DynamicUpdate():
         self.flows.plot(ax = self.ax3)
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
+        plt.show()
         self.fig.savefig(f"topology_0.png")
 
 

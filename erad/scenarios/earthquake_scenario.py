@@ -105,10 +105,10 @@ class EarthquakeScenario(BaseScenario, GeoUtilities):
         Args:
             assets (dict): The dictionary of all assets and their corresponding asset types
         """
-        
         for asset_type, asset_dict in assets.items():
             # assert asset_type in self.probability_model, f"Survival probability for asset type '{asset_type}' not found in the passed probability_model"
             if asset_type in self.probability_model:
+                
                 probability_function = self.probability_model[asset_type]
                 for asset_name, asset_ppty in asset_dict.items():
                     coords = Point(asset_ppty["coordinates"][::-1])

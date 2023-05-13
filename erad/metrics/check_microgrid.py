@@ -86,6 +86,36 @@ def create_directed_graph(
 
     return graph.to_directed()
 
+def node_connected_to_substation(
+    substation_nodes: List[str],
+    driver: GraphDatabase.driver
+):
+    """ Gives list of nodes still connected to substation. """
+    directed_graph = create_directed_graph(driver)
+    edges_to_be_removed = []
+
+    for edge in directed_graph.edges():
+        edge_data = directed_graph.get_edge_data(*edge)
+        if "survive" in edge_data and int(edge_data["survive"]) == 0:
+            edges_to_be_removed.append(edge)
+
+    if edges_to_be_removed:
+        directed_graph.remove_edges_from(edges_to_be_removed)
+        wcc = nx.weakly_connected_components(directed_graph)
+
+        for _, weak_component in enumerate(wcc):
+            wcc_graph = directed_graph.subgraph(weak_component)
+            nodes = wcc_graph.nodes()
+            for sub_node in substation_nodes:
+                if sub_node in nodes:
+                    return nodes
+    else:
+        nodes = []
+        for edge in directed_graph.edges():
+            nodes.extend(edge)
+        return nodes
+    return []
+            
 
 def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
     """Checks for possibility of microgrid in each subgraph.
@@ -127,7 +157,6 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
             sinks, sources = [], []
             for node in wcc_graph.nodes():
                 # Connect all loads to infinity sink
-                
 
                 if "pv" in node or "es_" in node:
                     wcc_graph.add_edge(node, "infinity_source", capacity=1e9)
@@ -143,14 +172,17 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
                     wcc_graph.add_edge("infinity_sink", node, capacity=1e9)
                     sinks.append(node)
                     sink_capacity += math.sqrt(
-                        node_data[node].get('kW', 0) ** 2
-                        + node_data[node].get('kvar', 0) ** 2
+                    node_data[node].get('kW', 0) ** 2
+                    + node_data[node].get('kvar', 0) ** 2
                     ) * float(node_data[node].get("critical_load_factor", 0))
-
+                   
+            
+            # if id == 1:
+            #     breakpoint()
             flow_value, _ = nx.maximum_flow(
                 wcc_graph, "infinity_source", "infinity_sink", capacity="kva"
             )
-
+    
             subgraphs[f"weak_component_{id}"] = {
                 "length": len(weak_component),
                 "max_flow": flow_value,
@@ -159,6 +191,8 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
                 "source_capacity": source_capacity,
                 "sink_capacity": sink_capacity,
             }
+
+
 
     if output_json_path:
         with open(output_json_path, "w") as fpointer:
