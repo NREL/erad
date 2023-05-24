@@ -1,5 +1,5 @@
 """
-This module will update the survive proprty based on whether 
+This module will update the survive property based on whether 
 the critica infrastructure is going to be powered from microgrid or not.
 """
 

@@ -37,7 +37,7 @@ def create_directed_graph(
     return relationship{.*} , sourceNode {.*}, targetNode{.*}
     """
 
-    # Gettings relations between customers and buses
+    # Gettings relations between critical infrastructures and buses
     critical_infra_bus_network_query = """
     MATCH (sourceNode:Bus)-[relationship:GETS_POWER_FROM]-(targetNode)
     return relationship{.*} , sourceNode {.*}, targetNode{.*}
@@ -158,15 +158,22 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
             for node in wcc_graph.nodes():
                 # Connect all loads to infinity sink
 
-                if "pv" in node or "es_" in node:
+                if "pv" in node or "es_" in node or node_data.get(node, {}).get('backup', None) == 1:
                     wcc_graph.add_edge(node, "infinity_source", capacity=1e9)
                     wcc_graph.add_edge("infinity_source", node, capacity=1e9)
                     sources.append(node)
-                    source_capacity += (
-                        node_data[node]["kw"]
-                        if "kw" in node_data[node]
-                        else node_data[node]["capacity"]
-                    )
+
+                    cap_ = None 
+                    if 'kw' in node_data[node]:
+                        cap_ = node_data[node]["kw"]
+                    elif 'capacity' in node_data[node]:
+                        cap_ = node_data[node]["capacity"]
+                    elif 'backup' in node_data[node]:
+                        cap_ = 20
+                    else:
+                        raise Exception('Not a valid source!')
+                    source_capacity += cap_
+
                 elif "load" in node or node_data.get(node, {}).get('survive', None) is not None :
                     wcc_graph.add_edge(node, "infinity_sink", capacity=1e9)
                     wcc_graph.add_edge("infinity_sink", node, capacity=1e9)
@@ -177,7 +184,7 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
                     ) * float(node_data[node].get("critical_load_factor", 0))
                    
             
-            # if id == 1:
+            # if id == 2:
             #     breakpoint()
             flow_value, _ = nx.maximum_flow(
                 wcc_graph, "infinity_source", "infinity_sink", capacity="kva"
