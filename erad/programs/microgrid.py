@@ -19,6 +19,7 @@ def apply_microgrid_to_critical_infra(
     infra_survives = [subdict['sinks'] for _, subdict \
                       in islands_jsons.items() if len(subdict['sources'])>0]
 
+    all_sinks = [x for el in infra_survives for x in el]
     infra_survives = [x for el in infra_survives for x in el if 'load' not in x]
     
     for infra in infra_survives:
@@ -35,3 +36,4 @@ def apply_microgrid_to_critical_infra(
                         cname=infra,
                     )
                 )
+    return all_sinks

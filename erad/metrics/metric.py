@@ -30,7 +30,8 @@ def validate_export_path(file_path: Union[str, Path], file_type: str):
 
 
 def is_customer_getting_power(
-    driver: GraphDatabase.driver, output_csv_path: str
+    driver: GraphDatabase.driver, output_csv_path: str,
+    load_list: List[str] = None
 ):
 
     """Function for checking whether customer is still connected
@@ -41,6 +42,8 @@ def is_customer_getting_power(
             instance
         output_csv_path (str): CSV file path for exporting the metric.
     """
+    if not load_list:
+        load_list = []
 
     validate_export_path(output_csv_path, ".csv")
     cypher_query = """
@@ -60,7 +63,8 @@ def is_customer_getting_power(
 
         for item in result:
             metric_container["load_name"].append(item["c.name"])
-            metric_container["metric"].append(item["max_p"])
+            metric_container["metric"].append(item["max_p"] \
+                                              if item["c.name"] not in load_list else 1)
 
     df = pd.DataFrame(metric_container)
     df.to_csv(output_csv_path)
@@ -94,7 +98,7 @@ def energy_resilience_by_customer(
                     WITH lo,cs, 
                         point.distance(point({longitude: lo.longitude, latitude:lo.latitude}), 
                         point({longitude: cs.longitude, latitude:cs.latitude}))/1000 AS d
-                    RETURN lo.name, sum(cs.survival_probability/d) AS gamma
+                    RETURN lo.name, sum(toInteger(toBoolean(cs.survive) OR toBoolean(cs.backup))/d) AS gamma
                     """
                     # count(d)/sum(d) AS gamma
                     # WHERE cs.survive = 1 
