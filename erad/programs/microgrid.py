@@ -26,6 +26,7 @@ def apply_microgrid_to_critical_infra(
         cypher_query = f"""
                         MATCH (c)
                         WHERE c.name = $cname
+                        SET c.survive = 1
                         SET c.survival_probability = 1
                     """
 
