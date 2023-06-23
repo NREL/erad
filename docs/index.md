@@ -1,29 +1,28 @@
-# ERAD
+# Equitable Resilience Analysis for Distribution Power System (ERAD)
 
----
-## Installation Instruction
+## Summary 
 
-We recommend using Anaconda or Miniconda to create the environment for windows user. 
-Use the commands below to create environment and install the ERAD tool.
+Understanding impact of hazard event on people's ability to access critical service is key to designing and selecting appropriate programs to minimize impact. Flooded roads, downed power lines, flooded power substation would impact access to critical servies like electricity, food, health and more. The field of disaster modeling is still evolving and so is our understanding of how these events would impact our critical infrastrctures such power grid, hospitals, groceries etc.
 
-=== ":fontawesome-brands-windows: Windows 10"
+ERAD is a free, open-source Python toolkit for calculating equity and resilience measures in the face of hazards like earthquakes and flooding. It uses graph databases to store data and perform computation at the household level for a variety of critical services that are connected by power distribution network. It uses fragility curves, which are functions that relate hazard severity to survival probability for power system assets including cables, transformers, substations, roof-mounted solar panels, etc. recommended in top literature. Programs like undergrounding, microgrid, and electricity backup units for critical infrastructures may all be evaluated using metrics and compared across different neighborhoods to assess their effects on equity and resilience.
 
-    ``` cmd
-    conda create -n erad python==3.8
-    conda activate erad
-    conda install shapely
-    git clone https://github.nrel.gov/ERAD/erad.git
-    cd erad
-    pip install -e.
-    ```
+ERAD is designed to be used by researchers, students, community stakeholders, distribution utilities to understand and possibly evaluate effectiveness of different post disaster programs to improve resilience and equity. It was funded by National Renewable Energy Laboratory (NREL) and made publicy available with open license.
 
-=== ":fontawesome-brands-apple: + :fontawesome-brands-linux: Mac OS & linux"
+## Disaster Modeling in ERAD
 
-    ``` cmd
-    conda create -n erad python==3.8
-    conda activate erad
-    git clone https://github.nrel.gov/ERAD/erad.git
-    cd erad
-    pip install -e.
-    ```
+## Post Disaster Programs in ERAD
+
+## Metrics in ERAD 
+
+## How to Use Guides ?
+
+### Running Disaster Simulation 
+
+### Computing Resilience Metrics
+
+### Implementing Post Disaster Programs
+
+### Running Parallel Simulation using JSON configuration
+
+
 

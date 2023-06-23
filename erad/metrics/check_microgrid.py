@@ -168,8 +168,8 @@ def check_for_microgrid(driver: GraphDatabase.driver, output_json_path: str):
                         cap_ = node_data[node]["kw"]
                     elif 'capacity' in node_data[node]:
                         cap_ = node_data[node]["capacity"]
-                    elif 'backup' in node_data[node]:
-                        cap_ = 20
+                    elif 'backup_capacity_kw' in node_data[node]:
+                        cap_ = node_data[node]["backup_capacity_kw"]
                     else:
                         raise Exception('Not a valid source!')
                     source_capacity += cap_

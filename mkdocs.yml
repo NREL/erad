@@ -26,6 +26,7 @@ theme:
 plugins:
   - mkdocstrings
   - search
+  - table-reader
 
 repo_url: https://github.com/NREL/erad.git
 repo_name: nrel/erad
@@ -51,9 +52,11 @@ markdown_extensions:
 
 nav:
   - Welcome: index.md
-  - Tutorials: 
-    - Compute resilience metrics: tutorial_resilience_metrics.md
-  - How to Guides: how-to-guides.md
+  # - Tutorials: 
+  #   - Compute resilience metrics: tutorial_resilience_metrics.md
+  - Getting Started: 
+    - Installation Instruction: how-to-install.md
+    - Loading data into database: load_data.md
   - References:
     - utils.ditto_utils: utils_ditto_utils.md
     - utils.hifld_utils: utils_hifld_utils.md
