@@ -28,9 +28,6 @@ def _update_critical_infra_based_on_grid_access_fast(
     substations = [item["n.name"]  for item in substations]
     
     nodes = node_connected_to_substation(substations, driver)
-    print(len(nodes))
-    # with open('nodes.txt', "w") as fp:
-    #     fp.writelines(nodes)
 
     # Get all critical infra and check if they are in above nodes
     for cri_infra in critical_infras:

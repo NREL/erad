@@ -11,7 +11,7 @@ from erad.metrics.check_microgrid import check_for_microgrid
 
 def apply_microgrid_to_critical_infra(
         driver: GraphDatabase.driver,
-        factor: float= 0.5*0.4
+        factor: float= (0.5 * 0.4)
 ):
     """ Function that will update the survive property of 
     critical infrastructure if it can get power from microgrid."""

@@ -73,3 +73,4 @@ def get_sites(polygon: str, tags: List[str] ):
 
     print('Number of parcels extracted: ', len(json_parcels['features']))
     return json_parcels
+

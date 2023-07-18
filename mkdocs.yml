@@ -27,6 +27,9 @@ plugins:
   - mkdocstrings
   - search
   - table-reader
+  - mkdocs-jupyter:
+      include_source: True
+      include_requirejs: true
 
 repo_url: https://github.com/NREL/erad.git
 repo_name: nrel/erad
@@ -52,11 +55,13 @@ markdown_extensions:
 
 nav:
   - Welcome: index.md
-  # - Tutorials: 
-  #   - Compute resilience metrics: tutorial_resilience_metrics.md
   - Getting Started: 
     - Installation Instruction: how-to-install.md
     - Loading data into database: load_data.md
+    - Disaster modeling: disaster_modeling.md
+    - Computing metrics: computing_metrics.md
+    - Notebooks Examples: notebook_examples.md
+    - Utility Scripts: utility_functions.md
   - References:
     - utils.ditto_utils: utils_ditto_utils.md
     - utils.hifld_utils: utils_hifld_utils.md
@@ -65,4 +70,3 @@ nav:
     - visualization.plot_graph: visualization_plot_graph.md
     - db.neo4j: db_neo4j.md
     - exceptions: exceptions.md
-  - Guide to Developers: developers-guide.md

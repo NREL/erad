@@ -4,7 +4,7 @@
 from neo4j import GraphDatabase
 from shapely import MultiPolygon, Polygon
 
-from erad.db import scenario_model
+from erad.db import disaster_input_model
 from erad.scenarios import flood_scenario
 from erad.db.assets.distribution_lines import (
     _update_distribution_overhead_lines,
@@ -17,7 +17,7 @@ from erad.db.assets.critical_infras import (
 
 
 def inject_polygon_flooding(
-    scenario_input: scenario_model.PolygonFlooding,
+    scenario_input: disaster_input_model.PolygonFlooding,
     driver: GraphDatabase.driver,
     critical_infras: None
 ):

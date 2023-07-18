@@ -1,7 +1,7 @@
 
 ## Package Installation
 
-We recommend using Anaconda or Miniconda to create the environment for windows user. 
+We recommend using Anaconda or Miniconda to create the environment and instal ERAD. 
 Use the commands below to create environment and install the ERAD python package.
 
 === ":fontawesome-brands-windows: Windows 10"

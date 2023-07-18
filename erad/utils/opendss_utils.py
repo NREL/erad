@@ -41,8 +41,7 @@ def get_transformers(dss_instance: dss) -> List:
     """
 
     transformer_container = []
-    dss_instance.Circuit.SetActiveClass("Transformer")
-    flag = dss_instance.ActiveClass.First()
+    flag = dss_instance.Transformers.First()
     while flag > 0:
         trans_name = dss_instance.CktElement.Name().lower()
         buses = dss_instance.CktElement.BusNames()
@@ -58,8 +57,7 @@ def get_transformers(dss_instance: dss) -> List:
                 "num_phase": dss_instance.CktElement.NumPhases(),
             }
         )
-
-        flag = dss_instance.ActiveClass.Next()
+        flag = dss_instance.Transformers.Next()
     return transformer_container
 
 
@@ -84,8 +82,7 @@ def get_line_sections(dss_instance: dss) -> List:
     }
 
     sections_container = []
-    dss_instance.Circuit.SetActiveClass("Line")
-    flag = dss_instance.ActiveClass.First()
+    flag = dss_instance.Lines.First()
     while flag > 0:
         section_name = dss_instance.CktElement.Name().lower()
         buses = dss_instance.CktElement.BusNames()
@@ -104,7 +101,7 @@ def get_line_sections(dss_instance: dss) -> List:
             }
         )
 
-        flag = dss_instance.ActiveClass.Next()
+        flag = dss_instance.Lines.Next()
     return sections_container
 
 
@@ -143,8 +140,7 @@ def get_capacitors(dss_instance: dss) -> List:
     """
 
     capacitors_container = []
-    dss_instance.Circuit.SetActiveClass("Capacitor")
-    flag = dss_instance.ActiveClass.First()
+    flag = dss_instance.Capacitors.First()
     while flag > 0:
         capacitor_name = dss_instance.CktElement.Name().lower()
         buses = dss_instance.CktElement.BusNames()
@@ -160,7 +156,7 @@ def get_capacitors(dss_instance: dss) -> List:
             }
         )
 
-        flag = dss_instance.ActiveClass.Next()
+        flag = dss_instance.Capacitors.Next()
     return capacitors_container
 
 
@@ -175,8 +171,7 @@ def get_pvsystems(dss_instance: dss) -> List:
     """
 
     pvs_container = []
-    dss_instance.Circuit.SetActiveClass("PVSystem")
-    flag = dss_instance.ActiveClass.First()
+    flag = dss_instance.PVsystems.First()
     while flag > 0:
         pv_name = dss_instance.CktElement.Name().lower()
         buses = dss_instance.CktElement.BusNames()
@@ -191,7 +186,7 @@ def get_pvsystems(dss_instance: dss) -> List:
             }
         )
 
-        flag = dss_instance.ActiveClass.Next()
+        flag = dss_instance.PVsystems.Next()
     return pvs_container
 
 
@@ -206,8 +201,7 @@ def get_loads(dss_instance):
     """
 
     loads_container = []
-    dss_instance.Circuit.SetActiveClass("Load")
-    flag = dss_instance.ActiveClass.First()
+    flag = dss_instance.Loads.First()
     while flag > 0:
         load_name = dss_instance.CktElement.Name().lower()
         buses = dss_instance.CktElement.BusNames()
@@ -223,7 +217,7 @@ def get_loads(dss_instance):
             }
         )
 
-        flag = dss_instance.ActiveClass.Next()
+        flag = dss_instance.Loads.Next()
     return loads_container
 
 
