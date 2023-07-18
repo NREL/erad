@@ -9,20 +9,24 @@
       
       
       
+        <link rel="prev" href="../disaster_modeling/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="../notebook_examples/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
-        <title>ERAD</title>
+        <title>Computing metrics - ERAD</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -38,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#computing-energy-resilience-score" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -80,7 +89,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="ERAD" class="md-header__button md-logo" aria-label="ERAD" data-md-component="logo">
+    <a href=".." title="ERAD" class="md-header__button md-logo" aria-label="ERAD" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Computing metrics
             
           </span>
         </div>
@@ -206,7 +215,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="ERAD" class="md-nav__button md-logo" aria-label="ERAD" data-md-component="logo">
+    <a href=".." title="ERAD" class="md-nav__button md-logo" aria-label="ERAD" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -237,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Welcome
       </a>
     </li>
@@ -250,14 +259,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -266,7 +277,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting Started
@@ -279,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/how-to-install/" class="md-nav__link">
+      <a href="../how-to-install/" class="md-nav__link">
         Installation Instruction
       </a>
     </li>
@@ -293,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/load_data/" class="md-nav__link">
+      <a href="../load_data/" class="md-nav__link">
         Loading data into database
       </a>
     </li>
@@ -307,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/disaster_modeling/" class="md-nav__link">
+      <a href="../disaster_modeling/" class="md-nav__link">
         Disaster modeling
       </a>
     </li>
@@ -319,11 +330,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/computing_metrics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Computing metrics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Computing metrics
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computing-energy-resilience-score" class="md-nav__link">
+    Computing energy resilience score
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-if-customer-is-connected-to-grid" class="md-nav__link">
+    Checking if customer is connected to grid
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -335,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/notebook_examples/" class="md-nav__link">
+      <a href="../notebook_examples/" class="md-nav__link">
         Notebooks Examples
       </a>
     </li>
@@ -349,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/utility_functions/" class="md-nav__link">
+      <a href="../utility_functions/" class="md-nav__link">
         Utility Scripts
       </a>
     </li>
@@ -398,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/utils_ditto_utils/" class="md-nav__link">
+      <a href="../utils_ditto_utils/" class="md-nav__link">
         utils.ditto_utils
       </a>
     </li>
@@ -412,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/utils_hifld_utils/" class="md-nav__link">
+      <a href="../utils_hifld_utils/" class="md-nav__link">
         utils.hifld_utils
       </a>
     </li>
@@ -426,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/utils_opendss_utils/" class="md-nav__link">
+      <a href="../utils_opendss_utils/" class="md-nav__link">
         utils.opendss_utils
       </a>
     </li>
@@ -440,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/utils_util/" class="md-nav__link">
+      <a href="../utils_util/" class="md-nav__link">
         utils.util
       </a>
     </li>
@@ -454,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/visualization_plot_graph/" class="md-nav__link">
+      <a href="../visualization_plot_graph/" class="md-nav__link">
         visualization.plot_graph
       </a>
     </li>
@@ -468,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/db_neo4j/" class="md-nav__link">
+      <a href="../db_neo4j/" class="md-nav__link">
         db.neo4j
       </a>
     </li>
@@ -482,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/exceptions/" class="md-nav__link">
+      <a href="../exceptions/" class="md-nav__link">
         exceptions
       </a>
     </li>
@@ -514,6 +569,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computing-energy-resilience-score" class="md-nav__link">
+    Computing energy resilience score
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-if-customer-is-connected-to-grid" class="md-nav__link">
+    Checking if customer is connected to grid
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -524,8 +601,48 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+  <h1>Computing metrics</h1>
+
+<p>Let's see how you can compute metrics. You can compute these metrics post disaster. Click here to learn more about <a href="earthquake_modeling.md">disaster modeling</a> in ERAD.</p>
+<h2 id="computing-energy-resilience-score">Computing energy resilience score</h2>
+<p>Use this snippet to compute energy resilience score. </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">erad.metrics</span> <span class="kn">import</span> <span class="n">metric</span>
+<span class="kn">from</span> <span class="nn">erad.db</span> <span class="kn">import</span> <span class="n">neo4j_</span>
+
+<span class="n">neo4j_instance</span> <span class="o">=</span> <span class="n">neo4j_</span><span class="o">.</span><span class="n">Neo4J</span><span class="p">(</span>
+                <span class="n">neo4j_url</span><span class="o">=</span><span class="s1">&#39;bolt://localhost:7687&#39;</span><span class="p">,</span>
+                <span class="n">neo4j_username</span><span class="o">=</span><span class="s1">&#39;neo4j&#39;</span><span class="p">,</span> 
+                <span class="n">neo4j_password</span><span class="o">=</span><span class="s1">&#39;neo4j&#39;</span><span class="p">)</span>
+
+<span class="n">metric</span><span class="o">.</span><span class="n">energy_resilience_by_customer</span><span class="p">(</span>
+    <span class="n">neo4j_instance</span><span class="o">.</span><span class="n">driver</span><span class="p">,</span> <span class="s2">&quot;./energy_resilience.csv&quot;</span><span class="p">,</span>
+    <span class="n">critical_infras</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Grocery&quot;</span><span class="p">,</span> <span class="s2">&quot;Hospital&quot;</span><span class="p">,</span><span class="s2">&quot;Convenience&quot;</span><span class="p">,</span> <span class="s2">&quot;Shelter&quot;</span><span class="p">,</span> <span class="s2">&quot;Banking&quot;</span><span class="p">]</span> 
+    <span class="p">)</span>
+</code></pre></div>
+<h2 id="checking-if-customer-is-connected-to-grid">Checking if customer is connected to grid</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">erad.metrics</span> <span class="kn">import</span> <span class="n">metric</span>
+<span class="kn">from</span> <span class="nn">erad.db</span> <span class="kn">import</span> <span class="n">neo4j_</span>
+
+<span class="n">neo4j_instance</span> <span class="o">=</span> <span class="n">neo4j_</span><span class="o">.</span><span class="n">Neo4J</span><span class="p">(</span>
+                <span class="n">neo4j_url</span><span class="o">=</span><span class="s1">&#39;bolt://localhost:7687&#39;</span><span class="p">,</span>
+                <span class="n">neo4j_username</span><span class="o">=</span><span class="s1">&#39;neo4j&#39;</span><span class="p">,</span> 
+                <span class="n">neo4j_password</span><span class="o">=</span><span class="s1">&#39;neo4j&#39;</span><span class="p">)</span>
+
+<span class="n">metric</span><span class="o">.</span><span class="n">is_customer_getting_power</span><span class="p">(</span>
+        <span class="n">neo4j_instance</span><span class="o">.</span><span class="n">driver</span><span class="p">,</span> <span class="s2">&quot;./is_customer_connected.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -559,10 +676,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["search.suggest", "sarch.highlight", "content.tabs.link", "content.code.annotate"], "search": "/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "sarch.highlight", "content.tabs.link", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.a51614de.min.js"></script>
+      <script src="../assets/javascripts/bundle.a51614de.min.js"></script>
       
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js"></script>
