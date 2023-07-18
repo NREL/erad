@@ -4,7 +4,12 @@
 <p align="center">Graph based python tool for computing equitable resilience. </p>
 </p>
 
-
+![GitHub all releases](https://img.shields.io/github/downloads/NREL/erad/total?logo=Github&logoColor=%2300ff00&style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/nrel/erad?style=flat-square)
+[![CodeFactor](https://www.codefactor.io/repository/github/nrel/erad/badge)](https://www.codefactor.io/repository/github/nrel/erad)
+[![GitHub license](https://img.shields.io/github/license/NREL/erad?style=flat-square)](https://github.com/NREL/erad/blob/main/LICENSE.txt)
+[![GitHub issues](https://img.shields.io/github/issues/NREL/erad?style=flat-square)](https://github.com/NREL/erad/issues)
+![GitHub top language](https://img.shields.io/github/languages/top/nrel/erad?style=flat-square)
 
 [Visit full documentation here.](https://nrel.github.io/erad/)
 

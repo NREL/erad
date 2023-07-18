@@ -9,4 +9,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # Updated
 
 - Updated version to 0.0.0a0
+- Added badges in Home Page
 
