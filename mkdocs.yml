@@ -1,7 +1,8 @@
-site_name: ERAD
+site_name: Equitable Resilience for Power Distribution Grid (ERAD)
 
 theme:
   name: "material"
+  logo: images/logo.svg
   features:
     - search.suggest
     - sarch.highlight
@@ -60,6 +61,7 @@ nav:
     - Loading data into database: load_data.md
     - Disaster modeling: disaster_modeling.md
     - Computing metrics: computing_metrics.md
+    - Resilience programs: resilience_programs.md
     - Notebooks Examples: notebook_examples.md
     - Utility Scripts: utility_functions.md
   - References:

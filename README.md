@@ -1,6 +1,6 @@
 # ERAD (Equitable Resilience Analysis For Power Distribution System)
 <p align="center"> 
-<img src="logo.svg" width="250" style="display:flex;justify-content:center;">
+<img src="docs/images/logo.svg" width="250" style="display:flex;justify-content:center;">
 <p align="center">Graph based python tool for computing equitable resilience. </p>
 </p>
 
