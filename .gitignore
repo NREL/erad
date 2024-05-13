@@ -9,6 +9,8 @@ __pycache__/
 
 notebooks/*.csv
 erad_web/
+*.pdf 
+*.jats
 
 # Distribution / packaging
 .Python

@@ -1,144 +1,524 @@
-@inproceedings{10.1145/3575813.3595196,
-	author = {Taylor, Sofia and Setyawan, Gabriela and Cui, Bai and Zamzam, Ahmed and Roald, Line A.},
-	title = {Managing Wildfire Risk and Promoting Equity through Optimal Configuration of Networked Microgrids},
+%% This BibTeX bibliography file was created using BibDesk.
+%% https://bibdesk.sourceforge.io/
+
+%% Created for Palmintier, Bryan at 2024-01-27 13:04:22 -0700 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+@article{wang2019impact,
+  title={Impact of cascading and common-cause outages on resilience-constrained optimal economic operation of power systems},
+  author={Wang, Yifei and Huang, Liping and Shahidehpour, Mohammad and Lai, Loi Lei and Zhou, Ya},
+  journal={IEEE Transactions on Smart Grid},
+  volume={11},
+  number={1},
+  pages={590--601},
+  year={2019},
+  publisher={IEEE}
+}
+
+@inproceedings{liu2017quantified,
+  title={A quantified resilience assessment approach for electrical power systems considering multiple transmission line outages},
+  author={Liu, Xiaonan and Hou, Kai and Jia, Hongjie and Mu, Yunfei and Yu, Xiaodan and Wang, Yue and Dong, Jialin},
+  booktitle={2017 IEEE Electrical Power and Energy Conference (EPEC)},
+  pages={1--5},
+  year={2017},
+  organization={IEEE}
+}
+
+@article{panteli2016power,
+  title={Power system resilience to extreme weather: Fragility modeling, probabilistic impact assessment, and adaptation measures},
+  author={Panteli, Mathaios and Pickering, Cassandra and Wilkinson, Sean and Dawson, Richard and Mancarella, Pierluigi},
+  journal={IEEE Transactions on Power Systems},
+  volume={32},
+  number={5},
+  pages={3747--3757},
+  year={2016},
+  publisher={IEEE}
+}
+@article{alper2021heat,
+  title={Do heat vulnerable neighborhoods in New York City experience disproportionate power outages?},
+  author={Alper, Gabrielle},
+  year={2021}
+}
+
+@article{roman2019satellite,
+  title={Satellite-based assessment of electricity restoration efforts in Puerto Rico after Hurricane Maria},
+  author={Rom{\'a}n, Miguel O and Stokes, Eleanor C and Shrestha, Ranjay and Wang, Zhuosen and Schultz, Lori and Carlo, Edil A Sep{\'u}lveda and Sun, Qingsong and Bell, Jordan and Molthan, Andrew and Kalb, Virginia and others},
+  journal={PloS one},
+  volume={14},
+  number={6},
+  pages={e0218883},
+  year={2019},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+
+@article{carvallo2021frozen,
+  title={Frozen out in Texas: blackouts and inequity},
+  author={Carvallo, JP and Hsu, FC and Shah, Zeal and Taneja, J},
+  journal={The Rockefeller Foundation},
+  year={2021}
+}
+
+
+@techreport{wachtel_rencat_2022,
+	annote = {Used with Puerto Rico
+
+},
+	author = {Wachtel, Amanda and Melander, Darryl and Hart, Olga},
+	date-added = {2024-01-27 13:04:15 -0700},
+	date-modified = {2024-01-27 13:04:15 -0700},
+	file = {Wachtel et al. - 2022 - ReNCAT The Resilient Node Cluster Analysis Tool..pdf:/Users/bpalmint/Library/CloudStorage/Dropbox/Information/Energy/Energy Equity and Justice/Wachtel et al. - 2022 - ReNCAT The Resilient Node Cluster Analysis Tool..pdf:application/pdf},
+	institution = {Sandia National Lab.(SNL-NM), Albuquerque, NM (United States)},
+	shorttitle = {{ReNCAT}},
+	title = {{ReNCAT}: {The} {Resilient} {Node} {Cluster} {Analysis} {Tool}.},
+	url = {https://www.osti.gov/servlets/purl/1880920},
+	urldate = {2024-01-27},
+	year = {2022},
+	bdsk-url-1 = {https://www.osti.gov/servlets/purl/1880920}}
+
+@article{repair-paper,
+	abstract = {Recent episodes of natural disasters have challenged the resilience of power grids. Adequate distribution grid planning that properly captures the risk aversion of the utility system planner is a key factor to increase the flexibility of distribution networks to circumvent these events. In this paper, we propose a methodology to determine the optimal portfolio of investments in lines and storage devices in order to minimize a convex combination between expected value and CVaR of operational costs, including energy not served, while taking into account the multistage nature of the energy storage management within this context. While the expected value of energy not served has been traditionally employed to tackle routine failures, we also minimize the CVaR of energy not served to address high-impact, low-probability (HILP) events. We illustrate the performance of the proposed methodology with a 54-Bus system test case.},
+	annote = {REPAIR tool from LBNL
+},
+	author = {Moreira, Alexandre and Heleno, Miguel and Valenzuela, Alan},
+	copyright = {http://creativecommons.org/licenses/by/3.0/},
+	date-added = {2024-01-27 12:50:51 -0700},
+	date-modified = {2024-01-27 12:51:05 -0700},
+	doi = {10.3390/en14248482},
+	file = {Moreira et al. - 2021 - A Risk-Averse Approach for Distribution Grid Expan.pdf:/Users/bpalmint/Library/CloudStorage/Dropbox/Information/Energy/Resilience/Moreira et al. - 2021 - A Risk-Averse Approach for Distribution Grid Expan.pdf:application/pdf},
+	issn = {1996-1073},
+	journal = {Energies},
+	keywords = {distribution expansion planning, dynamic programming, nested Benders, risk aversion},
+	language = {en},
+	month = jan,
+	note = {Number: 24 Publisher: Multidisciplinary Digital Publishing Institute},
+	number = {24},
+	pages = {8482},
+	title = {A {Risk}-{Averse} {Approach} for {Distribution} {Grid} {Expansion} {Planning}},
+	url = {https://www.mdpi.com/1996-1073/14/24/8482},
+	urldate = {2024-01-27},
+	volume = {14},
+	year = {2021},
+	bdsk-url-1 = {https://www.mdpi.com/1996-1073/14/24/8482},
+	bdsk-url-2 = {https://doi.org/10.3390/en14248482}}
+
+@inproceedings{opendss,
+	abstract = {An open-source distribution system simulator has been developed for distributed resource planning, harmonic studies, neutral-earth voltage studies, volt-var control studies, and other special applications. The software includes several means of interfacing user code, including compiled dynamic link library, COM automation, and text scripting. Co-simulation interfaces are under development for interfacing with proprietary vendor-supplied models, and communication system overlays. The simulator, called OpenDSS, has been used to conduct several smart grid research projects, including advanced automation, electric vehicle penetration, state estimation, and green circuits. The software architecture and solution methods are described, in the effort to foster more collaborative research.},
+	annote = {OpenDSS
+ },
+	author = {Dugan, R.C. and McDermott, T.E.},
+	booktitle = {Power and {Energy} {Society} {General} {Meeting}, 2011 {IEEE}},
+	date-added = {2024-01-27 11:03:38 -0700},
+	date-modified = {2024-01-27 11:03:45 -0700},
+	doi = {10.1109/PES.2011.6039829},
+	file = {Dugan and McDermott - 2011 - An open source platform for collaborating on smart.pdf:/Users/bpalmintier/Documents/Information/Energy/Grid/Models/Dugan and McDermott - 2011 - An open source platform for collaborating on smart.pdf:application/pdf;IEEE Xplore Abstract Record:/Users/bpalmint/Zotero/storage/BPVDD7R7/WAYF.html:text/html},
+	keywords = {voltage, grid, system, power, automation;OpenDSS;communication, calculations;voltage, circuits;harmonic, collaboration;state, COM, control, control;, control;smart, distribution, domain, dynamic, earth, estimation;text, grids;software, harmonics;power, interface;distributed, libraries;transmission, library;cosimulation, link, network, overlay;compiled, penetration;green, planning;electric, planning;power, platform;smart, Research, resource, scripting;voltage-VAr, simulation;public, simulator;open, software;reactive, source, studies;groupware;power, studies;neutral, studies;open, vehicle},
+	month = jul,
+	pages = {1 --7},
+	title = {An open source platform for collaborating on smart grid research},
+	year = {2011},
+	bdsk-url-1 = {https://doi.org/10.1109/PES.2011.6039829}}
+
+@article{lin_equity-based_2022,
+	abstract = {The power system worldwide is facing challenges from a changing climate. Decision-makers are tasked with increasing the smartness and resilience of the energy infrastructure to reduce the negative impacts to customers, with the help of new technologies such as household renewable energy generators and electric vehicles. However, a largely overlooked topic is equity, and how the burdens and benefits of the power system are distributed to different communities. To fill this gap, this paper provides a thorough review of the implication of equity in the power system, the significance of guaranteeing energy equity both in everyday operation and disaster management, and the ongoing efforts to plan for equable resilience in various fields. Finally, a holistic power grid resilience enhancement framework is proposed that covers different stages of disaster management and different dimensions of energy equity.},
+	author = {Lin, Yanling and Wang, Jianhui and Yue, Meng},
+	date-added = {2024-01-27 10:29:41 -0700},
+	date-modified = {2024-01-27 10:29:41 -0700},
+	doi = {10.1016/j.tej.2022.107135},
+	file = {Lin et al. - 2022 - Equity-based grid resilience How do we get there.pdf:/Users/bpalmint/Dropbox/Information/Energy/Energy Equity and Justice/Lin et al. - 2022 - Equity-based grid resilience How do we get there.pdf:application/pdf;ScienceDirect Snapshot:/Users/bpalmint/Zotero/storage/YK2WCTFR/S1040619022000616.html:text/html},
+	issn = {1040-6190},
+	journal = {The Electricity Journal},
+	language = {en},
+	month = jun,
+	number = {5},
+	pages = {107135},
+	series = {Behind the meter strategies for enhancing the electricity grid resilience, reliability, economics, sustainability, and security},
+	shorttitle = {Equity-based grid resilience},
+	title = {Equity-based grid resilience: {How} do we get there?},
+	url = {https://www.sciencedirect.com/science/article/pii/S1040619022000616},
+	urldate = {2022-10-19},
+	volume = {35},
+	year = {2022},
+	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S1040619022000616},
+	bdsk-url-2 = {https://doi.org/10.1016/j.tej.2022.107135}}
+
+@techreport{wachtel_measuring_2022,
+	address = {Albuquerque, NM},
+	author = {Wachtel, Amanda and Melander, Darryl and Jeffers, Robert},
+	date-added = {2024-01-27 10:29:41 -0700},
+	date-modified = {2024-01-27 10:29:41 -0700},
+	file = {Wachtel et al. - 2022 - Measuring Societal Infrastructure Service Burden..pdf:/Users/bpalmint/Dropbox/Information/Energy/Energy Equity and Justice/Wachtel et al. - 2022 - Measuring Societal Infrastructure Service Burden..pdf:application/pdf},
+	institution = {Sandia National Laboratories},
+	month = feb,
+	number = {SAND2022-2029R},
+	title = {Measuring {Societal} {Infrastructure} {Service} {Burden}.},
+	url = {https://www.osti.gov/servlets/purl/1846088},
+	year = {2022},
+	bdsk-url-1 = {https://www.osti.gov/servlets/purl/1846088}}
+
+@article{romero-lankao_inequality_2022,
+	abstract = {Electric vehicles are seen as one of the technological solutions to transition our transportation systems away from carbon, and cities offer unique opportunities to electrify transportation. To be equitable, however, this transition will not merely require technological innovations. Acknowledging socio-spatial inequalities and creating strategies to address them are critical---yet relatively underexplored---dimensions of the transportation transition. This paper integrates relevant literature into a micro-urban social typology (MUST) approach that uses agglomerative clustering techniques to examine, first, the factors and attributes defining transportation inequities within 36 U.S. cities, and, second, the implications of these inequities for policies that foster a more equitable transportation transition. By combining socio-spatial and transportation data, we identified five MUSTs: Wealthy, Urban Disadvantaged, Urban Renters, Middle-Class Homeowners, and Rural/Exurban. Rather than being tied to any particular indicator (e.g., homeownership), these MUSTs contain intersecting factors and features of inequities. We compare transportation and health outcomes across MUSTs, and the results suggest that user-centric strategies and public investments are necessary to foster true transportation equity. These must go beyond the electrification of private vehicles and should be tailored to the specific characteristics of each MUST. These could include electric carpooling for the rural/exurban MUST and electrification of transit for the urban disadvantaged and renter MUSTs. Our typology offers a critical next step toward informing transportation transition policies to target critical sociodemographic, economic, and techno-infrastructural factors.},
+	annote = {Includes semi-quantitative maps of neighborhood typologies
+},
+	author = {Romero-Lankao, Patricia and Wilson, Alana and Zimny-Schmitt, Daniel},
+	date-added = {2024-01-27 10:29:41 -0700},
+	date-modified = {2024-01-27 10:29:41 -0700},
+	doi = {10.1016/j.erss.2022.102760},
+	file = {ScienceDirect Snapshot:/Users/bpalmint/Zotero/storage/PPEKU27W/S2214629622002638.html:text/html},
+	issn = {2214-6296},
+	journal = {Energy Research \& Social Science},
+	keywords = {Health risks, Cities, Electric vehicle adoption, Equitable and just transitions, Transportation equity, Typologies},
+	language = {en},
+	month = sep,
+	pages = {102760},
+	shorttitle = {Inequality and the future of electric mobility in 36 {U}.{S}. {Cities}},
+	title = {Inequality and the future of electric mobility in 36 {U}.{S}. {Cities}: {An} innovative methodology and comparative assessment},
+	url = {https://www.sciencedirect.com/science/article/pii/S2214629622002638},
+	urldate = {2023-04-27},
+	volume = {91},
+	year = {2022},
+	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S2214629622002638},
+	bdsk-url-2 = {https://doi.org/10.1016/j.erss.2022.102760}}
+
+@article{jessel_energy_2019,
+	abstract = {Household energy is increasingly vital for maintaining good health. Unaffordable and inadequate household energy presents adverse consequences that are amplified by poverty and a changing climate. To date, the connections between energy, socioeconomic disadvantage, and well-being are generally underappreciated, and household energy connection with climate change is under-researched. Building on the energy insecurity framework, this review explores literature related to household energy, poverty, and health in order to highlight the disproportionate burdens borne by vulnerable populations in adequately meeting household energy needs. This paper is based on a comprehensive review of books, peer-reviewed articles, and reports published between 1990 and 2019, identified via databases including JSTOR and PubMed. A total of 406 publications were selected as having potential for full review, 203 received full review, and 162 were included in this paper on the basis of set inclusion criteria. From the literature review, we created an original heuristic model that describes energy insecurity as either acute or chronic, and we further explore the mediators and pathways that link energy insecurity to health. In the discussion, we posit that the extant literature does not sufficiently consider that vulnerable communities often experience energy insecurity bundled with other hardships. We also discuss energy, poverty, and health through the lens of climate change, making the criticism that most research on household energy does not consider climate change. This evidence is important for enhancing research in this field and developing programmatic and policy interventions as they pertain to energy access, affordability, and health, with special emphasis on vulnerable populations, climate change, and social inequality.},
+	annote = {Introduced by Tamara Jones, Clean Energy Works
+},
+	author = {Jessel, Sonal and Sawyer, Samantha and Hern{\'a}ndez, Diana},
+	date-added = {2024-01-27 10:29:41 -0700},
+	date-modified = {2024-01-27 10:29:41 -0700},
+	issn = {2296-2565},
+	journal = {Frontiers in Public Health},
+	shorttitle = {Energy, {Poverty}, and {Health} in {Climate} {Change}},
+	title = {Energy, {Poverty}, and {Health} in {Climate} {Change}: {A} {Comprehensive} {Review} of an {Emerging} {Literature}},
+	url = {https://www.frontiersin.org/articles/10.3389/fpubh.2019.00357},
+	urldate = {2023-07-19},
+	volume = {7},
+	year = {2019},
+	bdsk-url-1 = {https://www.frontiersin.org/articles/10.3389/fpubh.2019.00357}}
+
+@article{brockway_inequitable_2021,
+	abstract = {Persistent social disparities in the adoption of distributed energy resources (DERs) have prompted calls for enabling more equitable uptake. However, there are indications that limits inherent to grid infrastructure may hinder DER adoption. In this study we analysed grid limits to new DER integration across California's two largest utility territories. We found that grid limits reduce access to solar photovoltaics to less than half of households served by these two utilities, and may hinder California's electric vehicle adoption and residential load electrification goals. We connected these results to demographic characteristics and found that grid limits also exacerbate existing inequities: households in increasingly Black-identifying and disadvantaged census block groups have disproportionately less access to new solar photovoltaic capacity based on circuit hosting capacity. Our results illuminate the need for equity goals to be an input in the design of policies for prioritizing grid upgrades.},
+	author = {Brockway, Anna M. and Conde, Jennifer and Callaway, Duncan},
+	copyright = {2021 The Author(s), under exclusive licence to Springer Nature Limited},
+	date-added = {2024-01-27 10:29:41 -0700},
+	date-modified = {2024-01-27 10:29:41 -0700},
+	doi = {10.1038/s41560-021-00887-6},
+	issn = {2058-7546},
+	journal = {Nature Energy},
+	keywords = {Power distribution, Energy policy, Energy justice, Energy grids and networks, Solar cells},
+	language = {en},
+	month = sep,
+	note = {Number: 9 Publisher: Nature Publishing Group},
+	number = {9},
+	pages = {892--903},
+	title = {Inequitable access to distributed energy resources due to grid infrastructure limits in {California}},
+	url = {https://www.nature.com/articles/s41560-021-00887-6},
+	urldate = {2023-11-20},
+	volume = {6},
+	year = {2021},
+	bdsk-url-1 = {https://www.nature.com/articles/s41560-021-00887-6},
+	bdsk-url-2 = {https://doi.org/10.1038/s41560-021-00887-6}}
+
+@article{rinaldi_identifying_2001,
+	abstract = {The notion that our nation's critical infrastructures are highly interconnected and mutually dependent in complex ways, both physically and through a host of information and communications technologies (so-called "cyberbased systems"), is more than an abstract, theoretical concept. As shown by the 1998 failure of the Galaxy 4 telecommunications satellite, the prolonged power crisis in California, and many other recent infrastructure disruptions, what happens to one infrastructure can directly and indirectly affect other infrastructures, impact large geographic regions and send ripples throughout the national a global economy. This article presents a conceptual framework for addressing infrastructure interdependencies that could serve as the basis for further understanding and scholarship in this important area. We use this framework to explore the challenges and complexities of interdependency. We set the stage for this discussion by explicitly defining the terms infrastructure, infrastructure dependencies, and infrastructure interdependencies and introducing the fundamental concept of infrastructures as complex adaptive systems. We then focus on the interrelated factors and system conditions that collectively define the six dimensions. Finally, we discuss some of the research challenges involved in developing, applying, and validating modeling and simulation methodologies and tools for infrastructure interdependency analysis.},
+	author = {Rinaldi, S. M. and Peerenboom, J. P. and Kelly, T. K.},
+	date-added = {2024-01-27 10:26:16 -0700},
+	date-modified = {2024-01-27 10:26:16 -0700},
+	doi = {10.1109/37.969131},
+	file = {IEEE Xplore Abstract Record:/Users/bpalmint/Zotero/storage/YIIBTKNY/969131.html:text/html;Rinaldi et al. - 2001 - Identifying, understanding, and analyzing critical.pdf:/Users/bpalmint/Dropbox/Information/Energy/Resilience/Rinaldi et al. - 2001 - Identifying, understanding, and analyzing critical.pdf:application/pdf},
+	issn = {1066-033X},
+	journal = {IEEE Control Systems Magazine},
+	keywords = {Power generation economics, Environmental economics, Petroleum, Couplings, simulation, modelling, Fuel economy, Natural gas, adaptive systems, Artificial satellites, Banking, critical infrastructures, infrastructure disruptions, infrastructure interdependencies, modeling, National security, Power system security, reliability theory},
+	month = dec,
+	number = {6},
+	pages = {11--25},
+	title = {Identifying, understanding, and analyzing critical infrastructure interdependencies},
+	volume = {21},
+	year = {2001},
+	bdsk-url-1 = {https://doi.org/10.1109/37.969131}}
+
+@book{nae-US-grid-resilience,
+	abstract = {"Americans' safety, productivity, comfort, and convenience depend on the reliable supply of electric power. The electric power system is a complex "cyber-physical" system composed of a network of millions of components spread out across the continent. These components are owned, operated, and regulated by thousands of different entities. Power system operators work hard to assure safe and reliable service, but large outages occasionally happen. Given the nature of the system, there is simply no way that outages can be completely avoided, no matter how much time and money is devoted to such an effort. The system's reliability and resilience can be improved but never made perfect. Thus, system owners, operators, and regulators must prioritize their investments based on potential benefits. Enhancing the Resilience of the Nation's Electricity System focuses on identifying, developing, and implementing strategies to increase the power system's resilience in the face of events that can cause large-area, long-duration outages: blackouts that extend over multiple service areas and last several days or longer. Resilience is not just about lessening the likelihood that these outages will occur. It is also about limiting the scope and impact of outages when they do occur, restoring power rapidly afterwards, and learning from these experiences to better deal with events in the future"--Publisher's description},
+	address = {Washington, DC},
+	annote = {Summary -- Introduction and motivation -- Today's grid and the evolving system of the future -- The many causes of grid failure -- Strategies to prepare for and mitigate large-area, long-duration blackouts -- Strategies for reducing the harmful consequences from loss of grid power -- Restoring grid function after a major disruption -- Conclusions -- Appendix A: Statement of task -- Appendix B: Committee biographies -- Appendix C: Disclosure of conflicts of interest -- Appendix D: Presentations and committee meetings -- Appendix E: Examples of large outages -- Appendix F: Acronyms},
+	author = {{National Academies of Sciences, Engineering, and Medicine (U.S.)}},
+	date-added = {2024-01-27 10:26:16 -0700},
+	date-modified = {2024-01-27 10:26:57 -0700},
+	file = {National Academies of Sciences, Engineering, and Medicine (U.S.) - 2017 - Enhancing the resilience of the nation's electrici.pdf:/Users/bpalmint/Dropbox/Information/Energy/Resilience/National Academies of Sciences, Engineering, and Medicine (U.S.) - 2017 - Enhancing the resilience of the nation's electrici.pdf:application/pdf},
+	isbn = {978-0-309-46307-2},
+	keywords = {United States, Electric power, Electric power systems, Electric power transmission, Electronic books},
+	note = {OCLC: on1008570220},
+	publisher = {the National Academies Press},
+	title = {Enhancing the resilience of the nation's electricity system},
+	year = {2017}}
+
+@techreport{anderson_new_2016,
+	annote = {Found Highest value in hybrid systems with PV+Storage+Generation. when valuing resiliency and reducing peak demand charges},
+	author = {Anderson, Kate and Burman, Kari and Simpkins, Travis and Helson, Erica and Lisell, Lars},
+	date-added = {2024-01-27 10:26:16 -0700},
+	date-modified = {2024-01-27 10:26:16 -0700},
+	institution = {National Renewable Energy Lab.(NREL), Golden, CO (United States)},
+	shorttitle = {New {York} {Solar} {Smart} {DG} {Hub}-{Resilient} {Solar} {Project}},
+	title = {New {York} {Solar} {Smart} {DG} {Hub}-{Resilient} {Solar} {Project}: {Economic} and {Resiliency} {Impact} of {PV} and {Storage} on {New} {York} {Critical} {Infrastructure}},
+	url = {https://nysolarmap.com/media/1636/economic-and-resiliency-impact-of-pv-and-storage.pdf},
+	urldate = {2016-12-06},
+	year = {2016},
+	bdsk-url-1 = {https://nysolarmap.com/media/1636/economic-and-resiliency-impact-of-pv-and-storage.pdf}}
+
+@inproceedings{brost_siting_2020,
+	abstract = {Natural or man-made disasters can disrupt electricity supply for long periods, resulting in significant human cost. We report an algorithm that designs microgrids with energy storage and distributed generation for societal benefit by assuring that critical services such as medical care, food, etc. have power throughout a long-duration outage. The algorithm employs search space decomposition, graph topology, and heuristics to efficiently find a high-quality solution, assuring even coverage of priority services. Energy storage plays a key role by enabling power delivery over a long duration without fuel resupply. We present an example demonstrating the algorithm's ability to respond to critical service priorities, electric distribution constraints, geospatial threats, and various outage duration targets.},
+	annote = {Sandia Paper on Graph-theoretic framework (recommended by Bobby J)
+},
+	author = {Brost, Randy C.},
+	booktitle = {2020 {IEEE} {Power} \& {Energy} {Society} {General} {Meeting} ({PESGM})},
+	date-added = {2024-01-27 10:26:16 -0700},
+	date-modified = {2024-01-27 10:26:16 -0700},
+	doi = {10.1109/PESGM41954.2020.9281424},
+	file = {Brost - 2020 - Siting Energy Storage and Distribution Resources f.pdf:/Users/bpalmint/Dropbox/Information/Energy/Resilience/Brost - 2020 - Siting Energy Storage and Distribution Resources f.pdf:application/pdf},
+	keywords = {Microgrids, Topology, Heuristic algorithms, Fuels, Energy storage, Geospatial analysis, Medical services},
+	month = aug,
+	note = {ISSN: 1944-9933},
+	pages = {1--5},
+	title = {Siting {Energy} {Storage} and {Distribution} {Resources} for {Societal} {Benefit} {During} {Long}-{Term} {Outages}},
+	year = {2020},
+	bdsk-url-1 = {https://doi.org/10.1109/PESGM41954.2020.9281424}}
+
+@misc{lbnl-ice,
+	author = {{Lawrence Berkeley National Laboratory}},
+	date-added = {2024-01-27 10:26:16 -0700},
+	date-modified = {2024-01-27 10:27:27 -0700},
+	file = {Interruption Cost Estimate (ICE) Calculator - BETA:/Users/bpalmint/Zotero/storage/XMH8A9FQ/www.icecalculator.com.html:text/html},
+	title = {Interruption {Cost} {Estimate} ({ICE}) {Calculator}},
+	url = {http://www.icecalculator.com/},
+	urldate = {2016-12-06},
+	year = {2018},
+	bdsk-url-1 = {http://www.icecalculator.com/}}
+
+@article{molinari_whos_2017,
+	abstract = {Objectives
+Natural and man-made disasters can result in power outages that can affect certain vulnerable populations dependent on electrically powered durable medical equipment. This study estimated the size and prevalence of that electricity-dependent population residing at home in the United States.
+
+Methods
+We used the Truven Health MarketScan 2012 database to estimate the number of employer-sponsored privately insured enrollees by geography, age group, and sex who resided at home and were dependent upon electrically powered durable medical equipment to sustain life. We estimated nationally representative prevalence and used US Census population estimates to extrapolate the national population and produce maps visualizing prevalence and distribution of electricity-dependent populations residing at home.
+
+Results
+As of 2012, among the 175 million persons covered by employer-sponsored private insurance, the estimated number of electricity-dependent persons residing at home was 366 619 (95\% confidence interval: 365 700-367 537), with a national prevalence of 218.2 per 100 000 covered lives (95\% confidence interval: 217.7-218.8). Prevalence varied significantly by age group (χ2 = 264 289 95, P {\textless} .0001) and region (χ2 = 12 286 30, P {\textless} .0001), with highest prevalence in those 65 years of age or older and in the South and the West. Across all insurance types in the United States, approximately 685 000 electricity-dependent persons resided at home.
+
+Conclusions
+These results may assist public health jurisdictions addressing unique needs and necessary resources for this particularly vulnerable population. Results can verify and enhance the development of functional needs registries, which are needed to help first responders target efforts to those most vulnerable during disasters affecting the power supply.},
+	author = {Molinari, Noelle Angelique M. and Chen, Bei and Krishna, Nevin and Morris, Thomas},
+	date-added = {2024-01-27 10:26:16 -0700},
+	date-modified = {2024-01-27 10:26:16 -0700},
+	doi = {10.1097/PHH.0000000000000345},
+	file = {Molinari et al. - 2017 - Who's at Risk When the Power Goes Out The At-home.pdf:/Users/bpalmint/Library/CloudStorage/Dropbox/Information/Energy/Resilience/Molinari et al. - 2017 - Who's at Risk When the Power Goes Out The At-home.pdf:application/pdf},
+	issn = {1078-4659},
+	journal = {Journal of public health management and practice : JPHMP},
+	number = {2},
+	pages = {152--159},
+	pmcid = {PMC5007208},
+	pmid = {26360818},
+	shorttitle = {Who's at {Risk} {When} the {Power} {Goes} {Out}?},
+	title = {Who's at {Risk} {When} the {Power} {Goes} {Out}? {The} {At}-home {Electricity}-{Dependent} {Population} in the {United} {States}, 2012},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5007208/},
+	urldate = {2023-04-30},
+	volume = {23},
+	year = {2017},
+	bdsk-url-1 = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5007208/},
+	bdsk-url-2 = {https://doi.org/10.1097/PHH.0000000000000345}}
+
+@techreport{naerm,
+	address = {Washington, DC},
+	annote = {NAERM Public Report and Roadmap},
+	author = {naerm},
+	date-added = {2024-01-27 10:23:08 -0700},
+	date-modified = {2024-01-27 10:27:40 -0700},
+	file = {North American Energy Resilience Model.pdf:/Users/bpalmint/Zotero/storage/GTPC7Q2Q/North American Energy Resilience Model.pdf:application/pdf},
+	institution = {U.S. Department of Energy},
+	language = {en},
+	month = jul,
+	pages = {18},
+	title = {North {American} {Energy} {Resilience} {Model}},
+	url = {https://www.energy.gov/sites/prod/files/2019/07/f65/NAERM_Report_public_version_072219_508.pdf},
+	year = {2019},
+	bdsk-url-1 = {https://www.energy.gov/sites/prod/files/2019/07/f65/NAERM_Report_public_version_072219_508.pdf}}
+
+@incollection{la100-es-chapter12,
+	address = {Golden, CO},
+	author = {Palmintier, Bryan and Abraham, Sherin Ann and Sedzro, Kwami Senam and Lockshin, Jane and Krishnamoorthy, Gayathri and Duwadi, Kapil and Romero-Lankao, Patricia and Rosner, Nicole and Bolla, Greg},
+	booktitle = {{LA100} {Equity} {Strategies}},
+	date-added = {2024-01-27 10:21:00 -0700},
+	date-modified = {2024-01-27 10:21:51 -0700},
+	editor = {Anderson, Kate and Day, Megan and Romero-Lankao, Patricia and Berdahl, Sonja and Rauser, Casandra},
+	month = oct,
+	note = {NREL/TP-6A40-85959},
+	publisher = {National Renewable Energy Lab},
+	title = {Chapter 12. {Distribution} {Grid} {Upgrades} for {Equitable} {Resilience} and {Solar}, {Storage}, and {Electric} {Vehicle} {Access}},
+	year = {2023}}
+
+@techreport{la100-es-report,
+	abstract = {LA100 Equity Strategies is a collaborative effort between LADWP, NREL, UCLA, and Kearns \& West that employs an interdisciplinary approach utilizing distinct - but connected - research efforts informed and guided by the project Steering Committee, which met monthly through the duration of the project. Chapters 1 through 4 address recognition and procedural justice through recognition, process, and community strategies, while Chapters 5 through 12 address distributional justice through program and infrastructure strategies. Chapters 13 through 17 provide policy and program strategies. Each chapter provides data, methods, tools, insights, and strategies to help LADWP make data-driven, community-informed decisions for equitable investments and program development.},
+	author = {Anderson, Kate and Day, Megan and Lankao, Patricia Romero and Berdahl, Sonja and Rauser, Casandra and Bowen, Thomas and Fournier, Eric Daniel and Heath, Garvin and Hinojosa, Raul and Ong, Paul and Palmintier, Bryan and Pierce, Gregory and Pincetl, Stephanie and Prasanna, Ashreeta and Ravi, Vikram and Reyna, Janet and Lee, Dong-Yeon and Rosner, Nicole and Sandoval, Noah and Sekar, Ashok and Sheinberg, Rachel and Simeone, Christina and Stenger, Katelyn and Sun, Bingrong and Valenzuela, Abel and Wilson, Alana and Zhu, Yifang and Abraham, Sherin Ann and Blanco, Lis and Bolla, Greg and Bustamante, Leticia and Coffee, Daniel and Craer, Jennifer and Das, Paritosh and Denholm, Paul and Duwadi, Kapil and Fontanini, Anthony and Gonzalez, Silvia and Gu, Yu and He, Yueshuai and Hernandez, Ariana and Horsey, Ry and Katz, Sophie and Krishnamoorthy, Gayathri and Li, Yun and Lin, Yun and Liu, Lixi and Lockshin, Jane and Ma, Jiaqi and Maguire, Jeff and Marroquin, Isaias and Mooney, Meghan and Panda, Kinshuk and Pleitez, Marcelo and Robertson, Joe and Rodriguez, Ruth and Ruddick-Schulman, Saul and Sanchez-Hall, Magali and Sedzro, Kwami Senam and Velasquez, Leslie and Walzberg, Julien and White, Philip and Yu, Qiao and Zimny-Schmitt, Daniel},
+	date-added = {2024-01-27 10:21:00 -0700},
+	date-modified = {2024-01-27 10:21:35 -0700},
+	doi = {10.2172/2221858},
+	institution = {National Renewable Energy Laboratory (NREL), Golden, CO (United States)},
+	language = {English},
+	month = nov,
+	number = {NREL/TP-5C00-85960},
+	title = {{LA100} {Equity} {Strategies}},
+	url = {https://www.osti.gov/biblio/2221858},
+	urldate = {2023-12-19},
 	year = {2023},
-	isbn = {9798400700323},
-	publisher = {Association for Computing Machinery},
+	bdsk-url-1 = {https://www.osti.gov/biblio/2221858},
+	bdsk-url-2 = {https://doi.org/10.2172/2221858}}
+
+@inproceedings{10.1145/3575813.3595196,
 	address = {New York, NY, USA},
-	url = {https://doi.org/10.1145/3575813.3595196},
+	author = {Taylor, Sofia and Setyawan, Gabriela and Cui, Bai and Zamzam, Ahmed and Roald, Line A.},
 	doi = {10.1145/3575813.3595196},
-	pages = {189 - 199},
-	numpages = {11},
+	isbn = {9798400700323},
 	keywords = {wildfire risk, power shutoffs, social vulnerability, distribution systems, networked microgrids},
 	location = {Orlando, FL, USA},
-	series = {e-Energy '23}
-}
+	numpages = {11},
+	pages = {189 - 199},
+	publisher = {Association for Computing Machinery},
+	series = {e-Energy '23},
+	title = {Managing Wildfire Risk and Promoting Equity through Optimal Configuration of Networked Microgrids},
+	url = {https://doi.org/10.1145/3575813.3595196},
+	year = {2023},
+	bdsk-url-1 = {https://doi.org/10.1145/3575813.3595196}}
 
 @article{buritica_hierarchical_2017,
-	title = {Hierarchical seismic vulnerability assessment of power transmission systems: sensitivity analysis of fragility curves and clustering algorithms},
-	volume = {44},
-	pages = {80--89},
-	number = {2},
-	journaltitle = {Canadian Journal of Civil Engineering},
-	author = {Buriticá, Jessica Ana Maria and Sanchez-Silva, Mauricio and Tesfamariam, Solomon},
+	author = {Buritic{\'a}, Jessica Ana Maria and Sanchez-Silva, Mauricio and Tesfamariam, Solomon},
 	date = {2017},
+	journaltitle = {Canadian Journal of Civil Engineering},
 	note = {Publisher: {NRC} Research Press},
-}
+	number = {2},
+	pages = {80--89},
+	title = {Hierarchical seismic vulnerability assessment of power transmission systems: sensitivity analysis of fragility curves and clustering algorithms},
+	volume = {44}}
 
 @article{kongar_seismic_2017,
-	title = {Seismic performance of buried electrical cables: evidence-based repair rates and fragility functions},
-	volume = {15},
-	pages = {3151--3181},
-	journaltitle = {Bulletin of Earthquake Engineering},
 	author = {Kongar, I and Giovinazzi, S and Rossetto, T},
 	date = {2017},
+	journaltitle = {Bulletin of Earthquake Engineering},
 	note = {Publisher: Springer},
-}
+	pages = {3151--3181},
+	title = {Seismic performance of buried electrical cables: evidence-based repair rates and fragility functions},
+	volume = {15}}
 
 @inproceedings{kongar_seismic_2014,
-	title = {Seismic fragility of underground electrical cables in the 2010 - 11 Canterbury ({NZ}) earthquakes},
-	booktitle = {Second European Conference on Earthquake Engineering \& Seismology, Istanbul},
 	author = {Kongar, Indranil and Rossetto, Tiziana and Giovinazzi, Sonia},
+	booktitle = {Second European Conference on Earthquake Engineering \& Seismology, Istanbul},
 	date = {2014},
-}
+	title = {Seismic fragility of underground electrical cables in the 2010 - 11 Canterbury ({NZ}) earthquakes}}
 
 @article{mo_seismic_2017,
-	title = {Seismic fragility analysis of monopile offshore wind turbines under different operational conditions},
-	volume = {10},
-	pages = {1037},
-	number = {7},
-	journaltitle = {Energies},
 	author = {Mo, Renjie and Kang, Haigui and Li, Miao and Zhao, Xuanlie},
 	date = {2017},
+	journaltitle = {Energies},
 	note = {Publisher: {MDPI}},
-}
+	number = {7},
+	pages = {1037},
+	title = {Seismic fragility analysis of monopile offshore wind turbines under different operational conditions},
+	volume = {10}}
 
 @article{jeddi_multi-hazard_2022,
-	title = {Multi-hazard typhoon and earthquake collapse fragility models for transmission towers: An active learning reliability approach using gradient boosting classifiers},
-	volume = {51},
-	pages = {3552--3573},
-	number = {15},
-	journaltitle = {Earthquake Engineering \& Structural Dynamics},
 	author = {Jeddi, Ashkan B and Shafieezadeh, Abdollah and Hur, Jieun and Ha, Jeong-Gon and Hahm, Daegi and Kim, Min-Kyu},
 	date = {2022},
+	journaltitle = {Earthquake Engineering \& Structural Dynamics},
 	note = {Publisher: Wiley Online Library},
-}
+	number = {15},
+	pages = {3552--3573},
+	title = {Multi-hazard typhoon and earthquake collapse fragility models for transmission towers: An active learning reliability approach using gradient boosting classifiers},
+	volume = {51}}
 
 @article{baghmisheh_seismic_2021,
-	title = {Seismic performance and fragility analysis of power distribution concrete poles},
-	volume = {150},
-	pages = {106909},
-	journaltitle = {Soil Dynamics and Earthquake Engineering},
 	author = {Baghmisheh, Amir Ghahremani and Mahsuli, Mojtaba},
 	date = {2021},
+	journaltitle = {Soil Dynamics and Earthquake Engineering},
 	note = {Publisher: Elsevier},
-}
+	pages = {106909},
+	title = {Seismic performance and fragility analysis of power distribution concrete poles},
+	volume = {150}}
 
 @article{rajabzadeh_improving_2022,
-	title = {Improving the resilience of distribution network in coming across seismic damage using mobile battery energy storage system},
-	volume = {52},
-	pages = {104891},
-	journaltitle = {Journal of Energy Storage},
 	author = {Rajabzadeh, Mohammad and Kalantar, Mohsen},
 	date = {2022},
+	journaltitle = {Journal of Energy Storage},
 	note = {Publisher: Elsevier},
-}
+	pages = {104891},
+	title = {Improving the resilience of distribution network in coming across seismic damage using mobile battery energy storage system},
+	volume = {52}}
 
 @misc{fema_hazus_2020,
-	title = {Hazus Earthquake Model Technical Manual Hazus 4.2 {SP}3},
-	publisher = {Federal Emergency Management Agency Washington, {DC}},
 	author = {{FEMA}},
 	date = {2020},
-}
+	publisher = {Federal Emergency Management Agency Washington, {DC}},
+	title = {Hazus Earthquake Model Technical Manual Hazus 4.2 {SP}3}}
 
 @article{farahani_earthquake_2020,
-	title = {Earthquake and post-earthquake vulnerability assessment of urban gas pipelines network},
-	volume = {101},
-	pages = {327--347},
-	journaltitle = {Natural Hazards},
 	author = {Farahani, Saeideh and Tahershamsi, Ahmad and Behnam, Behrouz},
 	date = {2020},
+	journaltitle = {Natural Hazards},
 	note = {Publisher: Springer},
-}
+	pages = {327--347},
+	title = {Earthquake and post-earthquake vulnerability assessment of urban gas pipelines network},
+	volume = {101}}
 
 @book{cirone_valutazione_2013,
-	location = {Palermo},
-	title = {Valutazione speditiva di sicurezza sismica degli edifici esistenti},
-	isbn = {978-88-579-0203-6},
-	publisher = {D. Flaccovio},
 	author = {Cirone, Pietro},
 	date = {2013},
+	isbn = {978-88-579-0203-6},
+	location = {Palermo},
 	note = {{OCLC}: 955721746},
-}
+	publisher = {D. Flaccovio},
+	title = {Valutazione speditiva di sicurezza sismica degli edifici esistenti}}
 
 @article{sanchez-munoz_electrical_2020,
-	title = {Electrical grid risk assessment against flooding in Barcelona and Bristol cities},
-	volume = {12},
-	pages = {1527},
-	number = {4},
-	journaltitle = {Sustainability},
-	author = {Sánchez-Muñoz, Daniel and Domínguez-García, José L and Martínez-Gomariz, Eduardo and Russo, Beniamino and Stevens, John and Pardo, Miguel},
+	author = {S{\'a}nchez-Mu{\~n}oz, Daniel and Dom{\'\i}nguez-Garc{\'\i}a, Jos{\'e} L and Mart{\'\i}nez-Gomariz, Eduardo and Russo, Beniamino and Stevens, John and Pardo, Miguel},
 	date = {2020},
+	journaltitle = {Sustainability},
 	note = {Publisher: {MDPI}},
-}
+	number = {4},
+	pages = {1527},
+	title = {Electrical grid risk assessment against flooding in Barcelona and Bristol cities},
+	volume = {12}}
 
 @article{williams_tsunami_2020,
-	title = {Tsunami fragility functions for road and utility pole assets using field survey and remotely sensed data from the 2018 Sulawesi tsunami, Palu, Indonesia},
-	volume = {177},
-	pages = {3545--3562},
-	journaltitle = {Pure and Applied Geophysics},
 	author = {Williams, James H and Paulik, Ryan and Wilson, Thomas M and Wotherspoon, Liam and Rusdin, Andi and Pratama, Gumbert Maylda},
 	date = {2020},
+	journaltitle = {Pure and Applied Geophysics},
 	note = {Publisher: Springer},
-}
+	pages = {3545--3562},
+	title = {Tsunami fragility functions for road and utility pole assets using field survey and remotely sensed data from the 2018 Sulawesi tsunami, Palu, Indonesia},
+	volume = {177}}
 
 @article{bennett_extending_2021,
-	title = {Extending energy system modelling to include extreme weather risks and application to hurricane events in Puerto Rico},
-	volume = {6},
-	pages = {240--249},
-	number = {3},
-	journaltitle = {Nature Energy},
-	author = {Bennett, Jeffrey A and Trevisan, Claire N and {DeCarolis}, Joseph F and Ortiz-García, Cecilio and Pérez-Lugo, Marla and Etienne, Bevin T and Clarens, Andres F},
+	author = {Bennett, Jeffrey A and Trevisan, Claire N and {DeCarolis}, Joseph F and Ortiz-Garc{\'\i}a, Cecilio and P{\'e}rez-Lugo, Marla and Etienne, Bevin T and Clarens, Andres F},
 	date = {2021},
+	journaltitle = {Nature Energy},
 	note = {Publisher: Nature Publishing Group {UK} London},
-}
+	number = {3},
+	pages = {240--249},
+	title = {Extending energy system modelling to include extreme weather risks and application to hurricane events in Puerto Rico},
+	volume = {6}}
+
+@online{la100-equity-strategy-web,
+	date = {2023-09-19},
+	date-modified = {2024-01-27 10:18:22 -0700},
+	keywords = {LA100, Equity Strategy Website},
+	title = {LA100: The Los Angeles 100% Renewable Energy Study and Equity Strategies},
+	url = {https://maps.nrel.gov/la100/equity-strategies#home},
+	urldate = {2023-09-19},
+	bdsk-url-1 = {https://maps.nrel.gov/la100/equity-strategies#home}}
+
+@online{naerm-web,
+	date = {2023-09-19},
+	date-modified = {2024-01-27 10:23:17 -0700},
+	keywords = {NAERM},
+	title = {North American Energy Resilience Model},
+	url = {https://www.energy.gov/oe/north-american-energy-resilience-model-naerm},
+	urldate = {2023-09-19},
+	bdsk-url-1 = {https://www.energy.gov/oe/north-american-energy-resilience-model-naerm}}
