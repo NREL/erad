@@ -33,7 +33,7 @@ bibliography: paper.bib
 
 Understanding the impact of extreme events on people's ability to access critical service is key to designing appropriate programs to minimize the overall impact. In the event of a disaster, damage to the electric system and related infrastructure (e.g. downed power lines, flooded equipment, hacked communication systems, damaged roads,  etc.) can impact people's access to critical services including not just electricity but also shelter, food, healthcare, and more.  Moreover, the individual and community's ease of service access--both before and during such events--may be correlated with household income and other demographics, with some historically disadvantaged communities potentially experiencing more difficult access to critical services. There is a key need to better understand such impacts and evaluate options to improve resilience and equity. The Equity and Resilience Analysis for electric Distribution systems (ERAD) tool is a free and open-source software package designed to be used by researchers, utilities, local governments, community groups, and other stakeholders to fill this need.
 
-# Statement of need
+# Statement of Need
 
 Much of the past work in evaluating equity and resilience have looked at historical data. For instance, Alper, et al. [@alper2021heat] used historical power outage complaint calls in New York city to understand heat vulnerability, Carvallo, et al. [@carvallo2021frozen] used satellite images to understand the impact of winter storm in minority communities in the state of Texas, Román, et al. [@roman2019satellite] used satellite images of Puerto Rico following hurricane maria to understand disparities in electric system recovery for disadvantaged communities. In another example Brockway, et al. [@brockway_inequitable_2021] show how existing grid infrastructure constraints may hinder the ability of  disadvantaged communities to charge electric vehicles and their access to DERs by looking at the geospatial intersection of demographics and grid hosting capacity data. ERAD instead provides a way to look ahead at possible future outages and service access challenges. ERAD also offers the unique feature of assessing access to multiple services and under multiple disaster event scenarios.
 
@@ -51,10 +51,13 @@ For outage simulations, ERAD uses asset fragility curves [@buritica_hierarchical
 
 Grid or service resilience enhancement programs such as undergrounding, microgrids [@10.1145/3575813.3595196], and electricity backup units for critical infrastructures can also be applied, enabling users to compare metrics across options to assess their effects on equity and resilience and help identify the best approaches.
 
-# Example usage
+# Example Usage
 
 ERAD has been used as part of multiple high-impact research efforts. Specifically it was used to analyze equitable access to critical services for 8 neighborhoods in the city of Los Angeles [@la100-es-chapter12] as it transitions to a 100% renewable energy future as part of the LA100 Equity Strategies project [@la100-equity-strategy]. It has also been used to generate distribution system outage scenarios for transmission distribution cosimulation following flooding event as part of North American Energy Resilience Model (NAERM) [@naerm] projects.
 
+# Next Steps
+
+We plan to enhance our features by including the capability to simulate additional threats, such as storms, heat waves, and cold spells, and by making the result visualization process more efficient.
 
 # Acknowledgements
 
