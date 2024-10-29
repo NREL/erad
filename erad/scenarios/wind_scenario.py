@@ -30,7 +30,7 @@ class WindScenario(BaseScenario, GeoUtilities):
         AssetTypes.substation.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.solar_panels.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.buried_lines.name :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
-        AssetTypes.wind_turbines.name :  ProbabilityFunctionBuilder("normal", [0.8, 10, 5]),
+        AssetTypes.wind_turbines.name :  ProbabilityFunctionBuilder("norm", [0.8, 10, 5]),
         #AssetTypes.battery_storage.name : ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         #AssetTypes.transmission_poles.name  :   ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
         AssetTypes.distribution_poles.name  :  ProbabilityFunctionBuilder("lognorm", [0.8, 10, 5]),
