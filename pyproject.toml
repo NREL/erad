@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "NREL-erad"
+dynamic = ["version"]
+description = "Graph based scalable tool for computing equitable resilience metrics for distribution systems."
+readme = "README.md"
+license = ""
+requires-python = ">=3.8"
+authors = [
+    { name = "Kapil Duwadi", email = "kapil.duwadi@nrel.gov" },
+    { name = "Aadil Latif", email = "aadil.altif@nrel.gov" },
+    { name = "Kwami Sedzro", email = "sherinann.abraham@nrel.gov" },
+    { name = "Sherin Ann Abraham", email = "kwami.sedzro@nrel.gov" },
+    { name = "Bryan Palmintier", email = "bryan.palmintier@nrel.gov" },
+]
+keywords = [
+    "Distribution",
+    "Earthquake",
+    "Equity",
+    "Fire",
+    "Flooding",
+    "Power",
+    "Python",
+    "Resilience",
+    "Systems",
+]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+]
+dependencies = [
+    "boto3",
+    "botocore",
+    "ditto.py",
+    "geojson",
+    "geopandas",
+    "geopy",
+    "graphdatascience",
+    "jupyter",
+    "matplotlib",
+    "neo4j-driver",
+    "networkx",
+    "OpenDSSDirect.py",
+    "pandas",
+    "plotly",
+    "pydantic~=1.10.14",
+    "pytest",
+    "python-dotenv",
+    "pyyaml",
+    "rasterio",
+    "requests",
+    "scipy",
+    "shapely",
+    "stateplane",
+    "xmltodict",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "mkdocs",
+    "mkdocs-jupyter",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "pylint",
+]
+
+[project.urls]
+Homepage = "https://github.com/nrel/erad"
+
+[tool.hatch.version]
+path = "erad/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/erad",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["erad"]
