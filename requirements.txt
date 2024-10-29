@@ -20,5 +20,5 @@ scipy
 geopy
 rasterio
 xmltodict
-pydantic 
+pydantic~=1.10.14
 requests

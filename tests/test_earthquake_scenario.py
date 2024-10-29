@@ -4,14 +4,13 @@ import datetime
 import shapely
 
 from erad.scenarios import earthquake_scenario
-from erad.db import inject_scenario
-from erad.db import scenario_model
+from erad.db import inject_earthquake, disaster_input_model
 from erad.db import neo4j_
 
 
 def test_injecting_earthquake_scenario():
 
-    scenario_input = scenario_model.PointEarthquake(
+    scenario_input = disaster_input_model.PointEarthquake(
         longitude=-121.72125955960196, 
         latitude=37.92770173811863,
         probability_model={},
@@ -21,7 +20,7 @@ def test_injecting_earthquake_scenario():
     )
     neo4j_instance = neo4j_.Neo4J()
 
-    inject_scenario.inject_point_earthquake(
+    inject_earthquake.inject_point_earthquake(
         scenario_input, neo4j_instance.driver
     )
     neo4j_instance.close_driver()
