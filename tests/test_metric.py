@@ -27,16 +27,16 @@ def test_energy_resilience_by_customer():
     neo4j_instance.close_driver()
 
 
-def test_equity_based_energy_resilience_by_income():
-    """Test function to compute the equity resilience by customer."""
+def test_energy_resilience_by_income():
+    """Test function to compute the energy resilience by customer."""
 
     energy_resilience_metric_path = (
         Path(__file__).parent / "data" / "metric_data" / "energy_resilience.csv"
     )
     neo4j_instance = neo4j_.Neo4J()
-    metric.equity_based_energy_resilience_by_income(
+    metric.energy_resilience_by_income(
         neo4j_instance.driver,
         energy_resilience_metric_path,
-        "./equity_based_energy_resilience_metric.json",
+        "./energy_resilience_metric.json",
     )
     neo4j_instance.close_driver()

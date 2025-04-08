@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 .vscode/**
+.qodo/**
+.pytest_cache/**
 
 # C extensions
 *.so
@@ -134,3 +136,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.qodo

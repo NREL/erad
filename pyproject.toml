@@ -1,20 +1,22 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "NREL-erad"
-dynamic = ["version"]
+version="0.0.1"
 description = "Graph based scalable tool for computing equitable resilience metrics for distribution systems."
 readme = "README.md"
-license = ""
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 authors = [
     { name = "Kapil Duwadi", email = "kapil.duwadi@nrel.gov" },
     { name = "Aadil Latif", email = "aadil.altif@nrel.gov" },
     { name = "Kwami Sedzro", email = "sherinann.abraham@nrel.gov" },
     { name = "Sherin Ann Abraham", email = "kwami.sedzro@nrel.gov" },
     { name = "Bryan Palmintier", email = "bryan.palmintier@nrel.gov" },
+]
+maintainers = [
+    { name = "Aadil Latif", email = "Aadil.Latif@nrel.gov" },
 ]
 keywords = [
     "Distribution",
@@ -57,6 +59,9 @@ dependencies = [
     "shapely",
     "stateplane",
     "xmltodict",
+    "lxml",
+    "html5lib",
+    "pyhigh"
 ]
 
 [project.optional-dependencies]
@@ -72,13 +77,48 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/nrel/erad"
 
-[tool.hatch.version]
-path = "erad/__init__.py"
 
-[tool.hatch.build.targets.sdist]
-include = [
-    "/erad",
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+  ".git",
+  ".ruff_cache",
+  ".venv",
+  "_build",
+  "build",
+  "dist",
+  "env",
+  "venv",
 ]
+ignore-init-module-imports = true
+line-length = 99
+indent-width = 4
+target-version = "py311"
 
-[tool.hatch.build.targets.wheel]
-packages = ["erad"]
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+select = [
+  "C901", # McCabe complexity
+  "E4",   # Subset of pycodestyle (E)
+  "E7",
+  "E9",
+  "F",    # Pyflakes
+  "W",    # pycodestyle warnings
+]
+ignore = []
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]
+"**/{tests,docs,tools}/*" = ["E402"]
