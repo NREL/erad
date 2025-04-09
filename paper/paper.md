@@ -1,5 +1,5 @@
 ---
-title: 'ERAD: A Graph-Based Tool for Equity and Resilience Analysis of electric Distribution systems.'
+title: 'ERAD: A Graph-Based Tool for Energy Resilience Analysis of electric Distribution systems.'
 tags:
   - python
   - neo4j
@@ -31,7 +31,7 @@ bibliography: paper.bib
 
 # Summary
 
-Understanding the impact of extreme events on people's ability to access critical services is key to designing appropriate programs to minimize the overall impact. In the event of a disaster, damage to the electric system and related infrastructure (e.g. downed power lines, flooded equipment, hacked communication systems, damaged roads,  etc.) can impact people's access to critical services including not just electricity but also shelter, food, healthcare, and more.  Moreover, the individual and community's ease of service access--both before and during such events--may be correlated with household income and other demographics, with some historically disadvantaged communities potentially experiencing more difficult access to critical services. There is a key need to better understand such impacts and evaluate options to improve energy resilience. The Equity and Resilience Analysis for electric Distribution systems (ERAD) tool is a free and open-source software package designed to be used by researchers, utilities, local governments, community groups, and other stakeholders to fill this need.
+Understanding the impact of extreme events on people's ability to access critical services is key to designing appropriate programs to minimize the overall impact. In the event of a disaster, damage to the electric system and related infrastructure (e.g. downed power lines, flooded equipment, hacked communication systems, damaged roads,  etc.) can impact people's access to critical services including not just electricity but also shelter, food, healthcare, and more.  Moreover, the individual and community's ease of service access--both before and during such events--may be correlated with household income and other demographics, with some historically disadvantaged communities potentially experiencing more difficult access to critical services. There is a key need to better understand such impacts and evaluate options to improve energy resilience. The Energy Resilience Analysis for electric Distribution systems (ERAD) tool is a free and open-source software package designed to be used by researchers, utilities, local governments, community groups, and other stakeholders to fill this need.
 
 # Statement of Need
 
