@@ -1,4 +1,4 @@
-# ERAD (<u>E</u>nergy and <u>R</u>esilience <u>A</u>nalysis for electric <u>D</u>istribution systems)
+# ERAD (<u>E</u>nergy <u>R</u>esilience <u>A</u>nalysis for electric <u>D</u>istribution systems)
 <p align="center"> 
 <img src="docs/images/logo.svg" width="250" style="display:flex;justify-content:center;">
 <p align="center">Graph based python tool for computing energy resilience. </p>
