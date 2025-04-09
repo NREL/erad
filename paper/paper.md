@@ -53,7 +53,7 @@ Grid or service resilience enhancement programs such as undergrounding, microgri
 
 # Example Usage
 
-ERAD has been used as part of multiple high-impact research efforts. Specifically, it was used to analyze equitable access to critical services for 8 neighborhoods in the city of Los Angeles [@la100-es-chapter12] as it transitions to a 100% renewable energy future as part of the LA100 Equity Strategies project [@la100-equity-strategy]. For transmission distribution cosimulation after a flooding disaster, ERAD has also been used to generate distribution system outage scenarios as a part of North American Energy Resilience Model (NAERM) [@naerm] studies.
+ERAD has been used as part of multiple high-impact research efforts. Specifically, it was used to analyze energy access to critical services for 8 neighborhoods in the city of Los Angeles [@la100-es-chapter12] as it transitions to a 100% renewable energy future as part of the LA100 Equity Strategies project [@la100-equity-strategy]. For transmission distribution cosimulation after a flooding disaster, ERAD has also been used to generate distribution system outage scenarios as a part of North American Energy Resilience Model (NAERM) [@naerm] studies.
 
 # Next Steps
 

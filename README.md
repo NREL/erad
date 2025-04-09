@@ -1,7 +1,7 @@
 # ERAD (<u>E</u>quity and <u>R</u>esilience <u>A</u>nalysis for electric <u>D</u>istribution systems)
 <p align="center"> 
 <img src="docs/images/logo.svg" width="250" style="display:flex;justify-content:center;">
-<p align="center">Graph based python tool for computing equitable resilience. </p>
+<p align="center">Graph based python tool for computing energy resilience. </p>
 </p>
 
 ![GitHub all releases](https://img.shields.io/github/downloads/NREL/erad/total?logo=Github&logoColor=%2300ff00&style=flat-square)

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "NREL-erad"
 version="0.0.1"
-description = "Graph based scalable tool for computing equitable resilience metrics for distribution systems."
+description = "Graph based scalable tool for computing energy resilience metrics for distribution systems."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
@@ -21,7 +21,7 @@ maintainers = [
 keywords = [
     "Distribution",
     "Earthquake",
-    "Energy",
+    "Equity",
     "Fire",
     "Flooding",
     "Power",
