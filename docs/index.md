@@ -1,4 +1,4 @@
-# Equitable Resilience Analysis for Distribution Power System (ERAD)
+# Energy Resilience Analysis for Distribution Power System (ERAD)
 
 ## Summary 
 
