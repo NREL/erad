@@ -25,7 +25,7 @@ Project maintainers are responsible for clarifying and enforcing our standards. 
 This Code of Conduct applies to all project spaces, including GitHub repositories, discussions, issue trackers, and any public communications.
 
 ## Enforcement
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project team at **aadil.latif@nrel.gov**.  
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project team at **aadil.latif@nlr.gov**.  
 All complaints will be reviewed and addressed promptly.
 
 ## Attribution

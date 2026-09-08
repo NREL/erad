@@ -10,11 +10,9 @@
 
 [Visit full documentation here.](https://nlr-distribution-suite.github.io/erad/)
 
-Understanding the impact of disaster events on people's ability to access critical services is key to designing appropriate programs to minimize the overall impact. Flooded roads, downed power lines, flooded power substation etc. could impact access to critical services like electricity, food, health and more. The field of disaster modeling is still evolving and so is our understanding of how these events would impact our critical infrastructures such power grid, hospitals, groceries, banks etc.
+ERAD is a free, open-source Python toolkit for assessing distribution-system asset resilience under hazard scenarios. It models physical infrastructure using graph-based connectivity and computes hazard-specific exposure and survival probabilities for assets such as poles, lines, cables, transformers, substations, junction boxes, switches, and rooftop solar installations. Asset fragility curves relate hazard severity to failure probability for power-system components using relationships established in the literature for flood, wind, wildfire, and earthquake conditions.
 
-ERAD is a free, open-source Python toolkit for computing energy resilience measures in the face of hazards like earthquakes and flooding. It uses graph database to store data and perform computation at the household level for a variety of critical services that are connected by power distribution network. It uses asset fragility curves, which are functions that relate hazard severity to survival probability for power system assets including cables, transformers, substations, roof-mounted solar panels, etc. recommended in top literature. Programs like undergrounding, microgrid, and electricity backup units for critical infrastructures may all be evaluated using metrics and compared across different neighborhoods to assess their effects on energy resilience.
-
-ERAD is designed to be used by researchers, students, community stakeholders, distribution utilities to understand and possibly evaluate effectiveness of different post disaster programs to improve energy resilience. It was funded by National Laboratory of the Rockies (NLR) and made publicly available with open license.
+ERAD is designed for researchers, students, utilities, and other stakeholders who want to evaluate the performance of electric distribution systems under extreme events and compare asset hardening or mitigation strategies. It supports scenario-based analysis, uncertainty sampling, and export of asset-level results for downstream analysis and system comparison. It was funded by the National Laboratory of the Rockies (NLR) and made publicly available with an open license.
 
 ```mermaid
 flowchart TD

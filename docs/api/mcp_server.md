@@ -1,6 +1,6 @@
 # ERAD MCP Server
 
-The ERAD MCP (Model Context Protocol) Server provides a powerful interface for running hazard simulations, querying assets, exploring historic hazards, and analyzing distribution system resilience through AI assistants like Claude Desktop and GitHub Copilot.
+The ERAD MCP (Model Context Protocol) Server provides a powerful interface for running hazard simulations, querying assets, exploring historic hazards, and analyzing distribution system asset survivability through AI assistants like Claude Desktop and GitHub Copilot.
 
 ## Overview
 
